@@ -1,19 +1,30 @@
 <template>
-  <div class="question-display">
+  <div class="question-display" @mousedown="handleMouseDown">
     <el-card v-if="mode === 'write'" shadow="hover">
       <span class="span-title">{{ currentQuestion.title }}</span>
-      <el-button v-if="showAnswer" type="info" size="small">查看答案</el-button>
-      <el-button @click="$emit('prev-question')" size="small">上一题</el-button>
-      <el-button @click="$emit('next-question')" size="small">下一题</el-button>
+      <!-- 通过内联样式控制透明度 -->
+      <span :style="{ opacity: isRandom ? 0 : 1 }">{{ currentIndex + 1 }}/{{ questions.length }}</span>
+      <el-button @click="$emit('prev-question')" size="small">上题</el-button>
+      <el-button @click="$emit('next-question')" size="small">下题</el-button>
+      <el-button @click="$emit('random-question')" size="small">随机</el-button>
+      <el-button @click="$emit('toggle-answer', !showAnswer)" size="small">=答案=</el-button>
     </el-card>
     <el-card v-else shadow="hover">
       <el-collapse v-model="activeNames">
-        <el-collapse-item v-for="(item, index) in questions" :key="index" :name="index.toString()">
+        =====<el-collapse-item
+          v-for="(item, index) in questions"
+          :key="index"
+          :name="index.toString()"
+        >
           <template #title>
             {{ item.title }}
           </template>
           <div class="answer-content">
-            <el-tag v-for="(ans, ansIndex) in item.answer" :key="ansIndex" style="margin: 5px;">
+            <el-tag
+              v-for="(ans, ansIndex) in item.answer"
+              :key="ansIndex"
+              style="margin: 5px"
+            >
               {{ ans }}
             </el-tag>
           </div>
@@ -26,18 +37,51 @@
 <script>
 export default {
   name: 'QuestionDisplay',
-  props: ['questions', 'mode', 'currentIndex', 'showAnswer'],
+  props: {
+    questions: {
+      type: Array,
+      required: true
+    },
+    mode: {
+      type: String,
+      required: true
+    },
+    currentIndex: {
+      type: Number,
+      required: true
+    },
+    showAnswer: {
+      type: Boolean,
+      required: true
+    },
+    isRandom: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
-      activeNames: [] // 控制折叠面板展开状态
-    }
+      activeNames: [], // 控制折叠面板展开状态
+    };
   },
   computed: {
     currentQuestion() {
-      return this.questions[this.currentIndex]
+      return this.questions[this.currentIndex];
+    },
+  },
+  methods: {
+    handleMouseDown(event) {
+      event.preventDefault();
+      if (event.button === 0) { // 鼠标左键
+        if (event.type === 'mousedown') {
+          this.$emit('random-question');
+        }
+      } else if (event.button === 2) { // 鼠标右键
+        this.$emit('next-question');
+      }
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -45,8 +89,15 @@ export default {
   margin: 20px 0;
 }
 .span-title {
+  width: 60%;
   margin-right: 20px;
   display: inline-block;
+}
+/* 添加进度样式 */
+span {
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
 }
 .answer-content {
   padding: 10px;
