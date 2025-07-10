@@ -2,21 +2,23 @@
   <div class="filter-panel el-card">
     <div class="el-form-item">
       <label class="el-form-item__label">章节筛选</label>
-      <select v-model="filter.chapter" class="el-select">
-        <option value="null" class="el-option">所有章节</option>
-        <option v-for="chapter in chapters" :key="chapter" :value="chapter" class="el-option">{{ chapter }}</option>
-      </select>
+      <!-- 使用 Element UI 组件语法 -->
+      <el-select v-model="filter.chapter" placeholder="所有章节">
+        <el-option label="所有章节" value="null"></el-option>
+        <el-option v-for="chapter in chapters" :key="chapter" :label="chapter" :value="chapter"></el-option>
+      </el-select>
     </div>
     <div class="el-form-item">
       <label class="el-form-item__label">级别筛选</label>
-      <select v-model="filter.level" class="el-select">
-        <option value="null" class="el-option">所有级别</option>
-        <option v-for="level in levels" :key="level" :value="level" class="el-option">{{ level }}</option>
-      </select>
+      <!-- 使用 Element UI 组件语法 -->
+      <el-select v-model="filter.level" placeholder="所有级别">
+        <el-option label="所有级别" value="null"></el-option>
+        <el-option v-for="level in levels" :key="level" :label="level" :value="level"></el-option>
+      </el-select>
     </div>
     <div class="el-form-item">
-      <button @click="reset" class="el-button el-button--default">重置筛选</button>
-      <button @click="applyFilter" class="el-button el-button--primary">应用筛选</button>
+      <el-button @click="reset" type="default">重置筛选</el-button>
+      <el-button @click="applyFilter" type="primary">应用筛选</el-button>
     </div>
   </div>
 </template>
@@ -24,12 +26,10 @@
 <script>
 export default {
   name: 'FilterPanel',
-  props: ['initialFilter'],
+  props: ['initialFilter', 'chapters', 'levels'],
   data() {
     return {
-      filter: { chapter: null, level: null },
-      chapters: [1, 2, 3], // 示例章节数据，实际使用时替换为真实数据
-      levels: [1, 2, 3] // 示例级别数据，实际使用时替换为真实数据
+      filter: { chapter: null, level: null }
     }
   },
   methods: {

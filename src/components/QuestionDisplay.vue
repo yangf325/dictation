@@ -1,15 +1,24 @@
 <template>
   <div class="question-display">
     <el-card v-if="mode === 'write'" shadow="hover">
-      <h3>{{ currentQuestion.title }}</h3>
+      <span class="span-title">{{ currentQuestion.title }}</span>
       <el-button v-if="showAnswer" type="info" size="small">查看答案</el-button>
-      <el-button @click="prevQuestion" size="small">上一题</el-button>
-      <el-button @click="nextQuestion" size="small">下一题</el-button>
+      <el-button @click="$emit('prev-question')" size="small">上一题</el-button>
+      <el-button @click="$emit('next-question')" size="small">下一题</el-button>
     </el-card>
     <el-card v-else shadow="hover">
-      <el-list :data="questions">
-        <el-list-item v-for="item in questions" :key="item.id">{{ item.title }}</el-list-item>
-      </el-list>
+      <el-collapse v-model="activeNames">
+        <el-collapse-item v-for="(item, index) in questions" :key="index" :name="index.toString()">
+          <template #title>
+            {{ item.title }}
+          </template>
+          <div class="answer-content">
+            <el-tag v-for="(ans, ansIndex) in item.answer" :key="ansIndex" style="margin: 5px;">
+              {{ ans }}
+            </el-tag>
+          </div>
+        </el-collapse-item>
+      </el-collapse>
     </el-card>
   </div>
 </template>
@@ -17,30 +26,15 @@
 <script>
 export default {
   name: 'QuestionDisplay',
-  props: ['questions', 'mode'],
+  props: ['questions', 'mode', 'currentIndex', 'showAnswer'],
   data() {
     return {
-      currentIndex: 0,
-      showAnswer: false
+      activeNames: [] // 控制折叠面板展开状态
     }
   },
   computed: {
     currentQuestion() {
       return this.questions[this.currentIndex]
-    }
-  },
-  methods: {
-    prevQuestion() {
-      if (this.currentIndex > 0) {
-        this.currentIndex--
-        this.$emit('prev-question')
-      }
-    },
-    nextQuestion() {
-      if (this.currentIndex < this.questions.length - 1) {
-        this.currentIndex++
-        this.$emit('next-question')
-      }
     }
   }
 }
@@ -49,5 +43,17 @@ export default {
 <style scoped>
 .question-display {
   margin: 20px 0;
+}
+.span-title {
+  margin-right: 20px;
+  display: inline-block;
+}
+.answer-content {
+  padding: 10px;
+  background-color: #f5f7fa;
+  border-radius: 4px;
+}
+.el-collapse-item__header {
+  font-weight: bold;
 }
 </style>

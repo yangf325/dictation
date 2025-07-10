@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <FilterPanel @filter-changed="handleFilterChanged" @reset="resetFilters" />
+    <FilterPanel 
+      @filter-changed="handleFilterChanged" 
+      @reset="resetFilters"
+      :chapters="uniqueChapters"
+      :levels="uniqueLevels"
+    />
     <ModeSwitcher @mode-changed="handleModeChanged" />
     <QuestionDisplay
       :questions="filteredQuestions"
       :mode="currentMode"
+      :currentIndex="currentIndex"
+      :showAnswer="showAnswer"
       @answer-show="handleAnswerShow"
       @prev-question="prevQuestion"
       @next-question="nextQuestion"
@@ -89,6 +96,14 @@ export default {
     },
     nextQuestion() {
       if (this.currentIndex < this.filteredQuestions.length - 1) this.currentIndex++
+    }
+  },
+  computed: {
+    uniqueChapters() {
+      return [...new Set(this.allQuestions.map(question => question.chapter))];
+    },
+    uniqueLevels() {
+      return [...new Set(this.allQuestions.map(question => question.level))];
     }
   }
 }
