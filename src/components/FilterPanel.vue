@@ -1,5 +1,5 @@
 <template>
-  <div class="filter-panel el-card" style="position: relative;">
+  <div class="filter-panel el-card" style="position: relative">
     <!-- 章节筛选部分 -->
     <div class="el-form-item">
       <label class="el-form-item__label">章节筛选</label>
@@ -19,7 +19,9 @@
         ></el-option>
       </el-select>
       <el-button @click="selectAll('chapter')" size="small">全选</el-button>
-      <el-button @click="clearSelection('chapter')" size="small">清空</el-button>
+      <el-button @click="clearSelection('chapter')" size="small"
+        >清空</el-button
+      >
     </div>
     <!-- 级别筛选部分 -->
     <div class="el-form-item">
@@ -44,7 +46,10 @@
     </div>
     <!-- 移除多余的模式切换组件，并在合适位置添加以下代码 -->
     <div class="mode-switcher-container">
-      <ModeSwitcher class="mode-switcher-original" @mode-changed="$emit('mode-changed', $event)" />
+      <ModeSwitcher
+        class="mode-switcher-original"
+        @mode-changed="$emit('mode-changed', $event)"
+      />
     </div>
   </div>
 </template>
@@ -53,25 +58,33 @@
 import ModeSwitcher from "./ModeSwitcher.vue";
 
 export default {
-  name: 'FilterPanel',
+  name: "FilterPanel",
   components: {
-    ModeSwitcher
+    ModeSwitcher,
   },
-  props: ['initialFilter', 'chapters', 'levels'],
+  props: ["initialFilter", "chapters", "levels"],
   data() {
     return {
-      filter: { chapter: [], level: [] }
-    }
+      filter: { chapter: [], level: [] },
+    };
   },
   methods: {
     applyFilter() {
-      const chapter = this.filter.chapter.includes('all') ? null : this.filter.chapter.length > 0 ? this.filter.chapter.map(Number) : null;
-      const level = this.filter.level.includes('all') ? null : this.filter.level.length > 0 ? this.filter.level.map(Number) : null;
-      console.log('即将发送的筛选条件:', { chapter, level });
-      this.$emit('filter-changed', { chapter, level });
+      const chapter = this.filter.chapter.includes("all")
+        ? null
+        : this.filter.chapter.length > 0
+        ? this.filter.chapter.map(Number)
+        : null;
+      const level = this.filter.level.includes("all")
+        ? null
+        : this.filter.level.length > 0
+        ? this.filter.level.map(Number)
+        : null;
+      console.log("即将发送的筛选条件:", { chapter, level });
+      this.$emit("filter-changed", { chapter, level });
     },
     selectAll(type) {
-      if (type === 'chapter') {
+      if (type === "chapter") {
         this.filter.chapter = [...this.chapters].map(Number);
       } else {
         this.filter.level = [...this.levels].map(Number);
@@ -79,7 +92,7 @@ export default {
       this.applyFilter();
     },
     clearSelection(type) {
-      if (type === 'chapter') {
+      if (type === "chapter") {
         this.filter.chapter = [];
       } else {
         this.filter.level = [];
@@ -88,15 +101,15 @@ export default {
     },
     reset() {
       this.filter = { chapter: [], level: [] };
-      this.$emit('reset');
+      this.$emit("reset");
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
 .filter-panel {
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   position: relative; /* 为绝对定位子元素创建定位上下文 */
 }
 .el-form-item {
