@@ -1,6 +1,11 @@
 <template>
-  <div class="question-display">
-    <el-card v-if="mode === 'write'" shadow="hover">
+  <div 
+    class="question-display" 
+    v-if="mode === 'write'" 
+    @mousedown="handleMouseDown"
+    tabindex="0"
+  >
+    <el-card shadow="hover">
       <span class="span-title">
         {{ currentQuestion.title }}
         <el-tag
@@ -25,56 +30,56 @@
       <!-- 通过内联样式控制透明度 -->
       <span :style="{ opacity: isRandom ? 0 : 1 }">{{ currentIndex + 1 }}/{{ questions.length }}</span>
       <el-button @click="$emit('prev-question')" size="small">上题</el-button>
-      <el-button @click="$emit('next-question')" size="small">下题</el-button>
       <el-button @click="$emit('random-question')" size="small">随机</el-button>
+      <el-button @click="$emit('next-question')" size="small">-下题-</el-button>
       <el-button @click="$emit('toggle-answer', !showAnswer)" size="small">=答案=</el-button>
     </el-card>
-    <el-card v-else shadow="hover">
-      <el-collapse v-model="activeNames">
-        <el-collapse-item
-          v-for="(item, index) in questions"
-          :key="index"
-          :name="index.toString()"
-        >
-          <template #title>
-            {{ item.title }}
-            <el-tag
-              v-if="item.level === 1"
-              style="margin-left: 5px; background-color: #c00000; color: #fff"
-            >
-              必备
-            </el-tag>
-            <el-tag
-              v-if="item.level === 2"
-              style="margin-left: 5px; background-color: #9933ff; color: #fff"
-            >
-              重要
-            </el-tag>
-            <el-tag
-              v-if="item.level === 3"
-              style="margin-left: 5px; background-color: #ffcc00; color: #fff"
-            >
-              可选
-            </el-tag>
-          </template>
-          <div class="answer-content">
-            <el-tag
-              v-for="(ans, ansIndex) in item.answer"
-              :key="ansIndex"
-              style="margin: 5px"
-              @click="handleAnswerClick"
-            >
-              {{ ans }}
-            </el-tag>
-          </div>
-        </el-collapse-item>
-      </el-collapse>
-    </el-card>
   </div>
+  <el-card v-else shadow="hover">
+    <el-collapse v-model="activeNames">
+      <el-collapse-item
+        v-for="(item, index) in questions"
+        :key="index"
+        :name="index.toString()"
+      >
+        <template #title>
+          {{ item.title }}
+          <el-tag
+            v-if="item.level === 1"
+            style="margin-left: 5px; background-color: #c00000; color: #fff"
+          >
+            必备
+          </el-tag>
+          <el-tag
+            v-if="item.level === 2"
+            style="margin-left: 5px; background-color: #9933ff; color: #fff"
+          >
+            重要
+          </el-tag>
+          <el-tag
+            v-if="item.level === 3"
+            style="margin-left: 5px; background-color: #ffcc00; color: #fff"
+          >
+            可选
+          </el-tag>
+        </template>
+        <div class="answer-content">
+          <el-tag
+            v-for="(ans, ansIndex) in item.answer"
+            :key="ansIndex"
+            style="margin: 5px"
+            @click="handleAnswerClick"
+          >
+            {{ ans }}
+          </el-tag>
+        </div>
+      </el-collapse-item>
+    </el-collapse>
+  </el-card>
 </template>
 
 <script>
-export default {
+ export default {
   name: 'QuestionDisplay',
   props: {
     questions: {
@@ -111,6 +116,34 @@ export default {
   methods: {
     handleAnswerClick() {
       this.$emit('toggle-answer', !this.showAnswer);
+    },
+    handleMouseDown(event) {
+      if (event.button === 0) { // 左键
+        this.$emit('prev-question');
+      } else if (event.button === 2) { // 右键
+        event.preventDefault();
+        this.$emit('next-question');
+      }
+    },
+    handleKeyDown(event) {
+      if (event.key === '/') { // / 键
+        this.$emit('prev-question');
+      } else if (event.key === '*') { // * 键
+        this.$emit('random-question');
+      } else if (event.key === '-') { // - 键
+        this.$emit('next-question');
+      }
+    }
+  },
+  mounted() {
+    if (this.mode === 'write') {
+      document.addEventListener('keydown', this.handleKeyDown);
+      this.$el.focus();
+    }
+  },
+  beforeUnmount() {
+    if (this.mode === 'write') {
+      document.removeEventListener('keydown', this.handleKeyDown);
     }
   }
 };
