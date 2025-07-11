@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <FilterPanel 
-      @filter-changed="handleFilterChanged" 
+    <FilterPanel
+      @filter-changed="handleFilterChanged"
       @reset="resetFilters"
       :chapters="uniqueChapters"
       :levels="uniqueLevels"
@@ -51,8 +51,8 @@ export default {
       currentMode: "write", // write: 默写模式, recite: 背诵模式
       currentFilter: { chapter: null, level: null },
       showAnswer: false,
-      currentIndex: 0
-    }
+      currentIndex: 0,
+    };
   },
   created() {
     this.filterQuestions();
@@ -82,37 +82,49 @@ export default {
     },
     handleAnswerShow(question) {
       // 这里可以添加具体的答案显示逻辑，例如弹窗展示答案等
-      console.log('点击了答案:', question);
+      console.log("点击了答案:", question);
     },
     handleInputAnswer(answer) {
       // 处理输入答案逻辑
     },
     toggleAnswer(showAnswer) {
       this.showAnswer = showAnswer;
-      if (!showAnswer) {
-        // 隐藏答案时清空输入框
+      // 移除隐藏答案时清空输入框的逻辑
+      // if (!showAnswer) {
+      //   // 隐藏答案时清空输入框
+      //   this.$refs.inputInteraction.clearAnswer();
+      // }
+    },
+    prevQuestion() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
         this.$refs.inputInteraction.clearAnswer();
       }
     },
-    prevQuestion() {
-      if (this.currentIndex > 0) this.currentIndex--
-    },
     nextQuestion() {
-      if (this.currentIndex < this.filteredQuestions.length - 1) this.currentIndex++
+      if (this.currentIndex < this.filteredQuestions.length - 1) {
+        this.currentIndex++;
+        this.$refs.inputInteraction.clearAnswer();
+      }
     },
     randomQuestion() {
       if (this.filteredQuestions.length > 0) {
-        this.currentIndex = Math.floor(Math.random() * this.filteredQuestions.length);
+        this.currentIndex = Math.floor(
+          Math.random() * this.filteredQuestions.length
+        );
+        this.$refs.inputInteraction.clearAnswer();
       }
-    }
+    },
   },
   computed: {
     uniqueChapters() {
-      return [...new Set(this.allQuestions.map(question => question.chapter))];
+      return [
+        ...new Set(this.allQuestions.map((question) => question.chapter)),
+      ];
     },
     uniqueLevels() {
-      return [...new Set(this.allQuestions.map(question => question.level))];
-    }
-  }
-}
+      return [...new Set(this.allQuestions.map((question) => question.level))];
+    },
+  },
+};
 </script>
