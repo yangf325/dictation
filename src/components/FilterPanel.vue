@@ -3,7 +3,7 @@
     <div class="el-form-item">
       <label class="el-form-item__label">章节筛选</label>
       <!-- 使用 Element UI 组件语法 -->
-      <el-select v-model="filter.chapter" placeholder="所有章节">
+      <el-select v-model="filter.chapter" placeholder="所有章节" @change="applyFilter">
         <el-option label="所有章节" value="null"></el-option>
         <el-option v-for="chapter in chapters" :key="chapter" :label="chapter" :value="chapter"></el-option>
       </el-select>
@@ -11,14 +11,14 @@
     <div class="el-form-item">
       <label class="el-form-item__label">级别筛选</label>
       <!-- 使用 Element UI 组件语法 -->
-      <el-select v-model="filter.level" placeholder="所有级别">
+      <el-select v-model="filter.level" placeholder="所有级别" @change="applyFilter">
         <el-option label="所有级别" value="null"></el-option>
         <el-option v-for="level in levels" :key="level" :label="level" :value="level"></el-option>
       </el-select>
     </div>
     <div class="el-form-item">
       <el-button @click="reset" type="default">重置筛选</el-button>
-      <el-button @click="applyFilter" type="primary">应用筛选</el-button>
+      <!-- 移除应用筛选按钮 -->
     </div>
   </div>
 </template>
