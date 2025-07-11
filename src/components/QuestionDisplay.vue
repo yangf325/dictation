@@ -2,7 +2,6 @@
   <div 
     class="question-display" 
     v-if="mode === 'write'" 
-    @mousedown="handleMouseDown"
     tabindex="0"
   >
     <el-card shadow="hover">
@@ -29,8 +28,8 @@
       </span>
       <!-- 通过内联样式控制透明度 -->
       <span :style="{ opacity: isRandom ? 0 : 1 }">{{ currentIndex + 1 }}/{{ questions.length }}</span>
-      <el-button @click="$emit('prev-question')" size="small">上题</el-button>
-      <el-button @click="$emit('random-question')" size="small">随机</el-button>
+      <el-button @click="$emit('prev-question')" size="small">/上题/</el-button>
+      <el-button @click="$emit('random-question')" size="small">*随机*</el-button>
       <el-button @click="$emit('next-question')" size="small">-下题-</el-button>
       <el-button @click="$emit('toggle-answer', !showAnswer)" size="small">=答案=</el-button>
     </el-card>
@@ -117,21 +116,20 @@
     handleAnswerClick() {
       this.$emit('toggle-answer', !this.showAnswer);
     },
-    handleMouseDown(event) {
-      if (event.button === 0) { // 左键
-        this.$emit('prev-question');
-      } else if (event.button === 2) { // 右键
-        event.preventDefault();
-        this.$emit('next-question');
-      }
-    },
+    // 移除 handleMouseDown 方法
     handleKeyDown(event) {
-      if (event.key === '/') { // / 键
-        this.$emit('prev-question');
-      } else if (event.key === '*') { // * 键
-        this.$emit('random-question');
-      } else if (event.key === '-') { // - 键
-        this.$emit('next-question');
+      const keys = ['/', '*', '-', '='];
+      if (keys.includes(event.key)) {
+        event.preventDefault();
+        if (event.key === '/') { // / 键
+          this.$emit('prev-question');
+        } else if (event.key === '*') { // * 键
+          this.$emit('random-question');
+        } else if (event.key === '-') { // - 键
+          this.$emit('next-question');
+        } else if (event.key === '=') { // = 键
+          this.$emit('toggle-answer', !this.showAnswer);
+        }
       }
     }
   },
@@ -154,7 +152,7 @@
   margin: 20px 0;
 }
 .span-title {
-  width: 60%;
+  width: 50%;
   margin-right: 20px;
   display: inline-block;
 }

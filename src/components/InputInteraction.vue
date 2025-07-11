@@ -40,30 +40,23 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener('keydown', this.handleKeyDown);
+    // 移除 = 键监听
+    // window.addEventListener('keydown', this.handleKeyDown);
   },
   beforeUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown);
+    // 移除对应的事件解绑
+    // window.removeEventListener('keydown', this.handleKeyDown);
   },
   methods: {
     clearAnswer() {
-      this.userAnswer = '';
-    },
-    handleKeyDown(event) {
-      if (event.key === '=') {
-        this.$emit('toggle-answer', !this.showAnswer);
-      }
+      this.userAnswer = "";
     },
     submitAnswer() {
       this.$emit("input-answer", this.userAnswer);
     },
-    // 移除 submitAnswer 方法
     toggleAnswer() {
       this.$emit("toggle-answer", !this.showAnswer);
-    },
-    clearAnswer() {
-      this.userAnswer = "";
-    },
+    }
   },
 };
 </script>
