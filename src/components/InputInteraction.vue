@@ -24,7 +24,7 @@
 
 <style scoped>
 .input-interaction {
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
   gap: 20px;
   height: calc(100vh - 200px);

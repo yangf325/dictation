@@ -1,78 +1,86 @@
 <template>
-  <div class="question-display" v-if="mode === 'write'" tabindex="0">
-    <el-card shadow="hover">
-      <span class="span-title">
-        {{ currentQuestion?.title || "" }}
-        <el-tag
-          v-if="currentQuestion?.level === 1"
-          style="margin-left: 5px; background-color: #c00000; color: #fff"
-        >
-          必备
-        </el-tag>
-        <el-tag
-          v-if="currentQuestion?.level === 2"
-          style="margin-left: 5px; background-color: #9933ff; color: #fff"
-        >
-          重要
-        </el-tag>
-        <el-tag
-          v-if="currentQuestion?.level === 3"
-          style="margin-left: 5px; background-color: #ffcc00; color: #fff"
-        >
-          可选
-        </el-tag>
-      </span>
-      <!-- 通过内联样式控制透明度 -->
-      <span :style="{ opacity: isRandom ? 0 : 1 }"
-        >{{ currentIndex + 1 }}/{{ questions.length }}</span
-      >
-      <el-button @click="$emit('prev-question')" size="small">/上题/</el-button>
-      <el-button @click="$emit('random-question')" size="small"
-        >*随机*</el-button
-      >
-      <el-button @click="$emit('next-question')" size="small">-下题-</el-button>
-      <el-button @click="$emit('toggle-answer', !showAnswer)" size="small"
-        >=答案=</el-button
-      >
-    </el-card>
-  </div>
-  <el-card v-else shadow="hover">
-    <el-collapse v-model="activeNames">
-      <el-collapse-item v-for="(item, index) in questions" :key="index">
-        <template #title>
-          {{ item.title }}
-          <el-tag
-            v-if="item?.level === 1"
-            style="margin-left: 5px; background-color: #c00000; color: #fff"
+  <div class="question-display">
+    <div v-if="mode === 'write'" tabindex="0">
+      <div class="ask-wrap">
+        <div class="question-header">
+          <div class="level-tags">
+            <el-tag
+              v-if="currentQuestion?.level === 1"
+              style="background-color: #c00000; color: #fff"
+              >必备</el-tag
+            >
+            <el-tag
+              v-if="currentQuestion?.level === 2"
+              style="background-color: #9933ff; color: #fff"
+              >重要</el-tag
+            >
+            <el-tag
+              v-if="currentQuestion?.level === 3"
+              style="background-color: #ffcc00; color: #fff"
+              >可选</el-tag
+            >
+          </div>
+          <div class="progress-info">
+            {{ currentIndex + 1 }}/{{ questions.length }}
+          </div>
+          <span class="question-title">{{ currentQuestion?.title || "" }}</span>
+        </div>
+        <div class="action-buttons">
+          <el-button @click="$emit('prev-question')" size="small"
+            >/上题/</el-button
           >
-            必备
-          </el-tag>
-          <el-tag
-            v-if="item?.level === 2"
-            style="margin-left: 5px; background-color: #9933ff; color: #fff"
+          <el-button @click="$emit('random-question')" size="small"
+            >*随机*</el-button
           >
-            重要
-          </el-tag>
-          <el-tag
-            v-if="item?.level === 3"
-            style="margin-left: 5px; background-color: #ffcc00; color: #fff"
+          <el-button @click="$emit('next-question')" size="small"
+            >-下题-</el-button
           >
-            可选
-          </el-tag>
-        </template>
-        <div class="answer-content" style="max-height: 300px; overflow-y: auto">
-          <el-tag
+          <el-button @click="$emit('toggle-answer', !showAnswer)" size="small"
+            >=答案=</el-button
+          >
+        </div>
+      </div>
+    </div>
+    <!-- 仅在非默写模式显示背诵卡片 -->
+    <div v-else class="card-grid">
+      <el-card
+        v-for="(item, index) in questions"
+        :key="index"
+        shadow="hover"
+        class="question-card"
+      >
+        <div class="card-header">
+          <span class="card-title">{{ index + 1 }}.{{ item.title }}</span>
+          <div class="card-level-tags">
+            <el-tag
+              v-if="item.level === 1"
+              style="background-color: #c00000; color: #fff"
+              >必备</el-tag
+            >
+            <el-tag
+              v-if="item.level === 2"
+              style="background-color: #9933ff; color: #fff"
+              >重要</el-tag
+            >
+            <el-tag
+              v-if="item.level === 3"
+              style="background-color: #ffcc00; color: #fff"
+              >可选</el-tag
+            >
+          </div>
+        </div>
+        <div class="card-answers">
+          <div
             v-for="(ans, ansIndex) in item.answer"
             :key="ansIndex"
-            style="margin: 5px"
-            @click="handleAnswerClick"
+            class="answer-item"
           >
             {{ ansIndex + 1 }}. {{ ans }}
-          </el-tag>
+          </div>
         </div>
-      </el-collapse-item>
-    </el-collapse>
-  </el-card>
+      </el-card>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -149,29 +157,98 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .question-display {
-  margin: 20px 0;
+  padding: 10px 0 0 0;
 }
-.span-title {
-  width: 50%;
-  margin-right: 20px;
-  display: inline-block;
-}
-/* 添加进度样式 */
-span {
-  margin-right: 10px;
-  display: inline-flex;
+.question-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
-.answer-content {
-  padding: 10px;
+.question-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.level-tags {
+  display: flex;
+  gap: 5px;
+}
+.progress-info {
+  margin: 10px 0;
+  color: #666;
+}
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px; /* 缩小卡片之间的间隙 */
+}
+.question-card {
+  min-height: 200px;
+  padding: 5px; /* 进一步减少卡片内边距 */
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px; /* 减少标题底部间隙 */
+  border-bottom: 1px solid #ebeef5;
+  margin-bottom: 5px; /* 减少标题与答案区域的间隙 */
+}
+.card-index {
+  margin-right: 5px;
+  font-weight: bold;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 14px; /* 降低标题字体大小 */
+}
+.card-level-tags {
+  display: flex;
+  gap: 5px;
+}
+.card-answers {
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 5px; /* 减少答案区域内边距 */
+  margin-top: 5px; /* 减少答案区域上边距 */
   background-color: #f5f7fa;
   border-radius: 4px;
-  max-height: 300px;
-  overflow-y: auto;
 }
-.el-collapse-item__header {
-  font-weight: bold;
+.answer-item {
+  margin-bottom: 3px; /* 减少答案项之间的间隙 */
+}
+/* 减小 el-card__body 与父元素的间隙 */
+.card-answers .el-card__body {
+  padding: 6px !important; /* 调整内边距 */
+}
+.question-card {
+  min-height: 200px;
+  padding: 5px; /* 进一步减少卡片内边距 */
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 8px; /* 再次缩小卡片之间的间隙 */
+}
+.ask-wrap {
+  border: 1px solid #dcdfe6;
+  border-radius: 5px;
+  display: flex;
+  padding: 20px;
+}
+.question-header {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  margin: 0;
+}
+.progress-info {
+  margin: 0 10px;
 }
 </style>
