@@ -1,5 +1,5 @@
 <template>
-  <div class="question-display" @mousedown="handleMouseDown">
+  <div class="question-display">
     <el-card v-if="mode === 'write'" shadow="hover">
       <span class="span-title">{{ currentQuestion.title }}</span>
       <!-- 通过内联样式控制透明度 -->
@@ -11,7 +11,7 @@
     </el-card>
     <el-card v-else shadow="hover">
       <el-collapse v-model="activeNames">
-        =====<el-collapse-item
+        <el-collapse-item
           v-for="(item, index) in questions"
           :key="index"
           :name="index.toString()"
@@ -24,6 +24,7 @@
               v-for="(ans, ansIndex) in item.answer"
               :key="ansIndex"
               style="margin: 5px"
+              @click="handleAnswerClick"
             >
               {{ ans }}
             </el-tag>
@@ -70,15 +71,8 @@ export default {
     },
   },
   methods: {
-    handleMouseDown(event) {
-      event.preventDefault();
-      if (event.button === 0) { // 鼠标左键
-        if (event.type === 'mousedown') {
-          this.$emit('random-question');
-        }
-      } else if (event.button === 2) { // 鼠标右键
-        this.$emit('next-question');
-      }
+    handleAnswerClick() {
+      this.$emit('toggle-answer', !this.showAnswer);
     }
   }
 };

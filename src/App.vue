@@ -15,6 +15,8 @@
       @answer-show="handleAnswerShow"
       @prev-question="prevQuestion"
       @next-question="nextQuestion"
+      @random-question="randomQuestion"
+      @toggle-answer="toggleAnswer"
     />
     <InputInteraction
       v-if="currentMode === 'write'"
@@ -78,8 +80,9 @@ export default {
     handleModeChanged(mode) {
       this.currentMode = mode;
     },
-    handleAnswerShow(questionId) {
-      // 处理显示答案逻辑
+    handleAnswerShow(question) {
+      // 这里可以添加具体的答案显示逻辑，例如弹窗展示答案等
+      console.log('点击了答案:', question);
     },
     handleInputAnswer(answer) {
       // 处理输入答案逻辑
@@ -96,6 +99,11 @@ export default {
     },
     nextQuestion() {
       if (this.currentIndex < this.filteredQuestions.length - 1) this.currentIndex++
+    },
+    randomQuestion() {
+      if (this.filteredQuestions.length > 0) {
+        this.currentIndex = Math.floor(Math.random() * this.filteredQuestions.length);
+      }
     }
   },
   computed: {
