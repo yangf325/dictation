@@ -3,10 +3,12 @@
     <FilterPanel
       @filter-changed="handleFilterChanged"
       @reset="resetFilters"
+      @mode-changed="handleModeChanged"
       :chapters="uniqueChapters"
       :levels="uniqueLevels"
     />
-    <ModeSwitcher @mode-changed="handleModeChanged" />
+    <!-- 移除下面这行注释 -->
+    <!-- <ModeSwitcher @mode-changed="handleModeChanged" /> -->
     <QuestionDisplay
       :questions="filteredQuestions"
       :mode="currentMode"
@@ -59,7 +61,7 @@ export default {
   },
   methods: {
     handleFilterChanged(filter) {
-      console.log('接收到的筛选条件:', filter); // 添加日志
+      console.log("接收到的筛选条件:", filter); // 添加日志
       this.currentFilter = filter;
       this.filterQuestions();
     },
@@ -71,7 +73,10 @@ export default {
       this.filteredQuestions = this.allQuestions.filter((question) => {
         // 处理章节筛选
         let chapterMatch = true;
-        if (this.currentFilter.chapter && this.currentFilter.chapter.length > 0) {
+        if (
+          this.currentFilter.chapter &&
+          this.currentFilter.chapter.length > 0
+        ) {
           chapterMatch = this.currentFilter.chapter.includes(question.chapter);
         }
 
@@ -83,7 +88,7 @@ export default {
 
         return chapterMatch && levelMatch;
       });
-      console.log('过滤后的题目数量:', this.filteredQuestions.length);
+      console.log("过滤后的题目数量:", this.filteredQuestions.length);
     },
     handleModeChanged(mode) {
       this.currentMode = mode;

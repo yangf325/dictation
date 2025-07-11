@@ -3,10 +3,11 @@
     <el-input
       v-model="userAnswer"
       type="textarea"
-      :rows="8" 
+      :autosize="{ minRows: 4, maxRows: 10 }"
       placeholder="请输入答案"
+      class="auto-height-textarea"
     ></el-input>
-    <div class="answer-section"> <!-- 移除 v-if 条件，确保始终占位 -->
+    <div class="answer-section">
       <div v-if="showAnswer && currentQuestion">
         <h4>正确答案：</h4>
         <el-tag
@@ -14,12 +15,51 @@
           :key="index"
           style="display: block; margin-bottom: 5px"
         >
-          {{ item }}
+          {{ index + 1 }}. {{ item }}
         </el-tag>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.input-interaction {
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 200px);
+}
+
+.input-interaction > * {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.auto-height-textarea >>> .el-textarea__inner {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.answer-section {
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.answer-section h4 {
+  margin-top: 0;
+}
+
+.el-tag {
+  font-size: 16px;
+}
+</style>
 
 <script>
 export default {
@@ -56,31 +96,7 @@ export default {
     },
     toggleAnswer() {
       this.$emit("toggle-answer", !this.showAnswer);
-    }
+    },
   },
 };
 </script>
-
-<style scoped>
-.input-interaction {
-  margin: 20px 0;
-  display: flex;
-  gap: 20px;
-}
-.input-interaction > * {
-  flex: 1;
-}
-.answer-section {
-  margin-top: 0;
-  border: 1px solid #dcdfe6;
-  border-radius: 4px;
-  min-height: 120px;
-  padding: 10px;
-}
-.answer-section h4 {
-  margin-top: 0;
-}
-.el-tag {
-  font-size: 16px; /* 答案的文本字体放大 4px（默认 12px） */
-}
-</style>

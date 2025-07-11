@@ -1,12 +1,8 @@
 <template>
-  <div 
-    class="question-display" 
-    v-if="mode === 'write'"
-    tabindex="0"
-  >
+  <div class="question-display" v-if="mode === 'write'" tabindex="0">
     <el-card shadow="hover">
       <span class="span-title">
-        {{ currentQuestion?.title || '' }}
+        {{ currentQuestion?.title || "" }}
         <el-tag
           v-if="currentQuestion?.level === 1"
           style="margin-left: 5px; background-color: #c00000; color: #fff"
@@ -27,11 +23,17 @@
         </el-tag>
       </span>
       <!-- 通过内联样式控制透明度 -->
-      <span :style="{ opacity: isRandom ? 0 : 1 }">{{ currentIndex + 1 }}/{{ questions.length }}</span>
+      <span :style="{ opacity: isRandom ? 0 : 1 }"
+        >{{ currentIndex + 1 }}/{{ questions.length }}</span
+      >
       <el-button @click="$emit('prev-question')" size="small">/上题/</el-button>
-      <el-button @click="$emit('random-question')" size="small">*随机*</el-button>
+      <el-button @click="$emit('random-question')" size="small"
+        >*随机*</el-button
+      >
       <el-button @click="$emit('next-question')" size="small">-下题-</el-button>
-      <el-button @click="$emit('toggle-answer', !showAnswer)" size="small">=答案=</el-button>
+      <el-button @click="$emit('toggle-answer', !showAnswer)" size="small"
+        >=答案=</el-button
+      >
     </el-card>
   </div>
   <el-card v-else shadow="hover">
@@ -58,14 +60,14 @@
             可选
           </el-tag>
         </template>
-        <div class="answer-content">
+        <div class="answer-content" style="max-height: 300px; overflow-y: auto">
           <el-tag
             v-for="(ans, ansIndex) in item.answer"
             :key="ansIndex"
             style="margin: 5px"
             @click="handleAnswerClick"
           >
-            {{ ans }}
+            {{ ansIndex + 1 }}. {{ ans }}
           </el-tag>
         </div>
       </el-collapse-item>
@@ -74,29 +76,29 @@
 </template>
 
 <script>
- export default {
-  name: 'QuestionDisplay',
+export default {
+  name: "QuestionDisplay",
   props: {
     questions: {
       type: Array,
-      required: true
+      required: true,
     },
     mode: {
       type: String,
-      required: true
+      required: true,
     },
     currentIndex: {
       type: Number,
-      required: true
+      required: true,
     },
     showAnswer: {
       type: Boolean,
-      required: true
+      required: true,
     },
     isRandom: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
@@ -110,36 +112,40 @@
   },
   methods: {
     handleAnswerClick() {
-      this.$emit('toggle-answer', !this.showAnswer);
+      this.$emit("toggle-answer", !this.showAnswer);
     },
     // 移除 handleMouseDown 方法
     handleKeyDown(event) {
-      const keys = ['/', '*', '-', '='];
+      const keys = ["/", "*", "-", "="];
       if (keys.includes(event.key)) {
         event.preventDefault();
-        if (event.key === '/') { // / 键
-          this.$emit('prev-question');
-        } else if (event.key === '*') { // * 键
-          this.$emit('random-question');
-        } else if (event.key === '-') { // - 键
-          this.$emit('next-question');
-        } else if (event.key === '=') { // = 键
-          this.$emit('toggle-answer', !this.showAnswer);
+        if (event.key === "/") {
+          // / 键
+          this.$emit("prev-question");
+        } else if (event.key === "*") {
+          // * 键
+          this.$emit("random-question");
+        } else if (event.key === "-") {
+          // - 键
+          this.$emit("next-question");
+        } else if (event.key === "=") {
+          // = 键
+          this.$emit("toggle-answer", !this.showAnswer);
         }
       }
-    }
+    },
   },
   mounted() {
-    if (this.mode === 'write') {
-      document.addEventListener('keydown', this.handleKeyDown);
+    if (this.mode === "write") {
+      document.addEventListener("keydown", this.handleKeyDown);
       this.$el.focus();
     }
   },
   beforeUnmount() {
-    if (this.mode === 'write') {
-      document.removeEventListener('keydown', this.handleKeyDown);
+    if (this.mode === "write") {
+      document.removeEventListener("keydown", this.handleKeyDown);
     }
-  }
+  },
 };
 </script>
 
@@ -162,6 +168,8 @@ span {
   padding: 10px;
   background-color: #f5f7fa;
   border-radius: 4px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 .el-collapse-item__header {
   font-weight: bold;
