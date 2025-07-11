@@ -228,7 +228,7 @@ const questions = [
   },
   {
     chapter: 4,
-    level: 2,
+    level: 3,
     title: "关键成功因素的主要特征?",
     answer: ["内部型 CSF", "外部型CSF", "监控型 CSF", "建立型CSF"],
     short: "内外空间",
@@ -246,7 +246,7 @@ const questions = [
   },
   {
     chapter: 4,
-    level: 2,
+    level: 3,
     title: "价值链分析法应用的基本步骤?",
     answer: [
       "识别组织价值链",
@@ -270,7 +270,7 @@ const questions = [
   },
   {
     chapter: 4,
-    level: 2,
+    level: 3,
     title: "Zachman 框架的纵向维度?",
     answer: [
       "范围模型",
@@ -283,7 +283,7 @@ const questions = [
   },
   {
     chapter: 4,
-    level: 2,
+    level: 3,
     title: "采用 Zachman 框架进行信息系统规划的一般步骤?",
     answer: [
       "确定组织的愿景和原则。",
