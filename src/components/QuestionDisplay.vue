@@ -1,26 +1,26 @@
 <template>
   <div 
     class="question-display" 
-    v-if="mode === 'write'" 
+    v-if="mode === 'write'"
     tabindex="0"
   >
     <el-card shadow="hover">
       <span class="span-title">
-        {{ currentQuestion.title }}
+        {{ currentQuestion?.title || '' }}
         <el-tag
-          v-if="currentQuestion.level === 1"
+          v-if="currentQuestion?.level === 1"
           style="margin-left: 5px; background-color: #c00000; color: #fff"
         >
           必备
         </el-tag>
         <el-tag
-          v-if="currentQuestion.level === 2"
+          v-if="currentQuestion?.level === 2"
           style="margin-left: 5px; background-color: #9933ff; color: #fff"
         >
           重要
         </el-tag>
         <el-tag
-          v-if="currentQuestion.level === 3"
+          v-if="currentQuestion?.level === 3"
           style="margin-left: 5px; background-color: #ffcc00; color: #fff"
         >
           可选
@@ -36,27 +36,23 @@
   </div>
   <el-card v-else shadow="hover">
     <el-collapse v-model="activeNames">
-      <el-collapse-item
-        v-for="(item, index) in questions"
-        :key="index"
-        :name="index.toString()"
-      >
+      <el-collapse-item v-for="(item, index) in questions" :key="index">
         <template #title>
           {{ item.title }}
           <el-tag
-            v-if="item.level === 1"
+            v-if="item?.level === 1"
             style="margin-left: 5px; background-color: #c00000; color: #fff"
           >
             必备
           </el-tag>
           <el-tag
-            v-if="item.level === 2"
+            v-if="item?.level === 2"
             style="margin-left: 5px; background-color: #9933ff; color: #fff"
           >
             重要
           </el-tag>
           <el-tag
-            v-if="item.level === 3"
+            v-if="item?.level === 3"
             style="margin-left: 5px; background-color: #ffcc00; color: #fff"
           >
             可选

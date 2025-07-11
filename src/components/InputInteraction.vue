@@ -72,12 +72,15 @@ export default {
 }
 .answer-section {
   margin-top: 0;
-  border: 1px solid #dcdfe6; /* 添加边框 */
-  border-radius: 4px; /* 边框圆角 */
-  min-height: 120px; /* 设置最小高度，确保不展示答案时也占位 */
-  padding: 10px; /* 添加内边距 */
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  min-height: 120px;
+  padding: 10px;
 }
 .answer-section h4 {
   margin-top: 0;
+}
+.el-tag {
+  font-size: 16px; /* 答案的文本字体放大 4px（默认 12px） */
 }
 </style>

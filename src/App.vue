@@ -34,7 +34,7 @@ import FilterPanel from "./components/FilterPanel.vue";
 import ModeSwitcher from "./components/ModeSwitcher.vue";
 import QuestionDisplay from "./components/QuestionDisplay.vue";
 import InputInteraction from "./components/InputInteraction.vue";
-import allQuestions from "./data.js";
+import questions from "./data.js";
 
 export default {
   name: "App",
@@ -46,9 +46,9 @@ export default {
   },
   data() {
     return {
-      allQuestions: allQuestions,
+      allQuestions: questions,
       filteredQuestions: [],
-      currentMode: "write", // write: 默写模式, recite: 背诵模式
+      currentMode: "write",
       currentFilter: { chapter: null, level: null },
       showAnswer: false,
       currentIndex: 0,
@@ -59,6 +59,7 @@ export default {
   },
   methods: {
     handleFilterChanged(filter) {
+      console.log('接收到的筛选条件:', filter); // 添加日志
       this.currentFilter = filter;
       this.filterQuestions();
     },
@@ -68,14 +69,21 @@ export default {
     },
     filterQuestions() {
       this.filteredQuestions = this.allQuestions.filter((question) => {
-        const chapterMatch =
-          !this.currentFilter.chapter ||
-          question.chapter === this.currentFilter.chapter;
-        const levelMatch =
-          !this.currentFilter.level ||
-          question.level === this.currentFilter.level;
+        // 处理章节筛选
+        let chapterMatch = true;
+        if (this.currentFilter.chapter && this.currentFilter.chapter.length > 0) {
+          chapterMatch = this.currentFilter.chapter.includes(question.chapter);
+        }
+
+        // 处理级别筛选
+        let levelMatch = true;
+        if (this.currentFilter.level && this.currentFilter.level.length > 0) {
+          levelMatch = this.currentFilter.level.includes(question.level);
+        }
+
         return chapterMatch && levelMatch;
       });
+      console.log('过滤后的题目数量:', this.filteredQuestions.length);
     },
     handleModeChanged(mode) {
       this.currentMode = mode;
