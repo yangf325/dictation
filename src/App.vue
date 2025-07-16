@@ -36,7 +36,12 @@ import FilterPanel from "./components/FilterPanel.vue";
 import ModeSwitcher from "./components/ModeSwitcher.vue";
 import QuestionDisplay from "./components/QuestionDisplay.vue";
 import InputInteraction from "./components/InputInteraction.vue";
-import questions from "./data.js";
+import questions from "./datas/data.js";
+import chapter5Questions from "./datas/data5.js";
+import chapter6Questions from "./datas/data6.js";
+import chapter7Questions from "./datas/data7.js";
+import chapter8Questions from "./datas/data8.js";
+import chapter9to11Questions from "./datas/data9.js";
 
 export default {
   name: "App",
@@ -48,7 +53,7 @@ export default {
   },
   data() {
     return {
-      allQuestions: questions,
+      allQuestions: [...questions, ...chapter5Questions, ...chapter6Questions, ...chapter7Questions, ...chapter8Questions, ...chapter9to11Questions],
       filteredQuestions: [],
       currentMode: "write",
       currentFilter: { chapter: null, level: null },
