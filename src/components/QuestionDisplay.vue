@@ -26,6 +26,9 @@
           <span class="question-title">{{ currentQuestion?.title || "" }}</span>
         </div>
         <div class="action-buttons">
+          <el-button @click="$emit('first-question')" size="small"
+            >第一题</el-button
+          >
           <el-button @click="$emit('prev-question')" size="small"
             >/上题/</el-button
           >
@@ -124,7 +127,7 @@ export default {
     },
     // 移除 handleMouseDown 方法
     handleKeyDown(event) {
-      const keys = ["/", "*", "-", "="];
+      const keys = ["/", "*", "-", "=", "Home"];
       if (keys.includes(event.key)) {
         event.preventDefault();
         if (event.key === "/") {
@@ -139,6 +142,9 @@ export default {
         } else if (event.key === "=") {
           // = 键
           this.$emit("toggle-answer", !this.showAnswer);
+        } else if (event.key === "Home") {
+          //home jian
+          this.$emit("first-question");
         }
       }
     },

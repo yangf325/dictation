@@ -16,6 +16,7 @@
       :showAnswer="showAnswer"
       @answer-show="handleAnswerShow"
       @prev-question="prevQuestion"
+      @first-question="firstQuestion"
       @next-question="nextQuestion"
       @random-question="randomQuestion"
       @toggle-answer="toggleAnswer"
@@ -53,7 +54,14 @@ export default {
   },
   data() {
     return {
-      allQuestions: [...questions, ...chapter5Questions, ...chapter6Questions, ...chapter7Questions, ...chapter8Questions, ...chapter9to11Questions],
+      allQuestions: [
+        ...questions,
+        ...chapter5Questions,
+        ...chapter6Questions,
+        ...chapter7Questions,
+        ...chapter8Questions,
+        ...chapter9to11Questions,
+      ],
       filteredQuestions: [],
       currentMode: "write",
       currentFilter: { chapter: null, level: null },
@@ -118,6 +126,10 @@ export default {
         this.currentIndex--;
         this.$refs.inputInteraction.clearAnswer();
       }
+    },
+    firstQuestion() {
+      this.currentIndex = 0;
+      this.$refs.inputInteraction.clearAnswer();
     },
     nextQuestion() {
       if (this.currentIndex < this.filteredQuestions.length - 1) {
