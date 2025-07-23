@@ -168,7 +168,7 @@ export default {
   margin-bottom: 10px;
 }
 .question-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
 .level-tags {
@@ -206,7 +206,7 @@ export default {
 }
 .card-title {
   font-weight: bold;
-  font-size: 14px; /* 降低标题字体大小 */
+  font-size: 20px; /* 降低标题字体大小 */
 }
 .card-level-tags {
   display: flex;
@@ -222,10 +222,11 @@ export default {
 }
 .answer-item {
   margin-bottom: 3px; /* 减少答案项之间的间隙 */
+  font-size: 18px;
 }
 /* 减小 el-card__body 与父元素的间隙 */
-.card-answers .el-card__body {
-  padding: 6px !important; /* 调整内边距 */
+.question-display .el-card__body {
+  padding: 10px !important;
 }
 .question-card {
   min-height: 200px;

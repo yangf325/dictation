@@ -13,7 +13,7 @@
         <el-tag
           v-for="(item, index) in currentQuestion.answer"
           :key="index"
-          style="display: block; margin-bottom: 5px"
+          style="display: block; margin-bottom: 5px; font-size: 24px"
         >
           {{ index + 1 }}. {{ item }}
         </el-tag>
@@ -41,6 +41,7 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  font-size: 24px;
 }
 
 .answer-section {
