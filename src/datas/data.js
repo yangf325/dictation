@@ -2,6 +2,7 @@
 const questions = [
   {
     chapter: 4,
+    short: "战甲主机认智障",
     level: 1,
     title: "信息系统规划的主要内容",
     answer: [
@@ -16,6 +17,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "任务体系部署的主要过程",
     answer: [
@@ -29,6 +31,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "资源体系调度的内容",
     answer: [
@@ -40,6 +43,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "保障体系的内容",
     answer: [
@@ -53,6 +57,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 1,
     title: "信息系统规划的工作要点",
     answer: [
@@ -65,6 +70,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "内部需求挖掘的主要工作任务",
     answer: [
@@ -77,6 +83,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "内部需求挖掘的注意事项",
     answer: [
@@ -89,6 +96,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "外部需求挖掘的主要工作任务",
     answer: [
@@ -103,12 +111,14 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "外部需求挖掘的注意事项",
     answer: ["国家战略与政策引用", "定性内容转定量对比", "避免信息安全事件"],
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "场景模型的主要组成部分",
     answer: [
@@ -124,6 +134,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "场景化模型分析的关键价值",
     answer: [
@@ -135,12 +146,14 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "深度诊断与评估的内容？",
     answer: ["成熟度与需求控制", "诊断与评估模型确立", "诊断与评估实施"],
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "整体与专项规划阶段的工作内容",
     answer: [
@@ -152,12 +165,14 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "需求整合的维度?",
     answer: ["业务领域维需求整合", "能力建设维需求整合", "技术发展维需求整合"],
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "整体规划重点关注的内容?",
     answer: [
@@ -168,6 +183,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "专项规划的内容?",
     answer: [
@@ -181,6 +197,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "专项规划重点关注的内容?",
     answer: [
@@ -192,6 +209,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "持续改进需要关注的内容?",
     answer: [
@@ -204,6 +222,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 2,
     title: "信息系统规划的常用方法?",
     answer: [
@@ -216,18 +235,21 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "战略目标集转移法中信息系统战略规划过程的步骤?",
     answer: ["识别和解释组织战略集", "进一步解释和验证组织战略集。"],
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "企业信息系统规划法的基本步骤?",
     answer: ["定义管理目标", "定义管理功能", "定义数据类", "定义信息结构"],
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "关键成功因素的主要特征?",
     answer: ["内部型 CSF", "外部型CSF", "监控型 CSF", "建立型CSF"],
@@ -235,6 +257,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "关键成功因素CSF的实施步骤?",
     answer: [
@@ -246,6 +269,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "价值链分析法应用的基本步骤?",
     answer: [
@@ -257,6 +281,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "Zachman 框架的横向维度?",
     answer: [
@@ -270,6 +295,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "Zachman 框架的纵向维度?",
     answer: [
@@ -283,6 +309,7 @@ const questions = [
   },
   {
     chapter: 4,
+    short: "内外空间",
     level: 3,
     title: "采用 Zachman 框架进行信息系统规划的一般步骤?",
     answer: [

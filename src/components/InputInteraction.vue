@@ -9,6 +9,7 @@
     ></el-input>
     <div class="answer-section">
       <div v-if="showAnswer && currentQuestion">
+        <h4>口诀：{{ currentQuestion.short }}</h4>
         <h4>正确答案：</h4>
         <el-tag
           v-for="(item, index) in currentQuestion.answer"
