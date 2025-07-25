@@ -15,7 +15,7 @@ const chapter6Questions = [
   },
   {
     chapter: 6,
-    short: "许自愈合弹信笺",
+    short: "需自愈[资预]合弹性监",
     level: 2, // “重点背” 对应级别 2
     title: "云资源规划的关键要素?",
     answer: [
@@ -30,7 +30,7 @@ const chapter6Questions = [
   },
   {
     chapter: 6,
-    short: "许自愈奢侈",
+    short: "需自愈奢侈（设持）",
     level: 1, // “必须背” 对应级别 1
     title: "云资源规划的基本流程?",
     answer: [
@@ -79,7 +79,7 @@ const chapter6Questions = [
   },
   {
     chapter: 6,
-    short: "求量云化全成续",
+    short: "虚荣选虚安成空",
     level: 2, // “重点背” 对应级别 2
     title: "计算资源规划的关键步骤?",
     answer: [

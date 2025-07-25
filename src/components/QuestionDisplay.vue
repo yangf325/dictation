@@ -53,7 +53,10 @@
         class="question-card"
       >
         <div class="card-header">
-          <span class="card-title">{{ index + 1 }}.{{ item.title }}</span>
+          <div class="title-container">
+            <span class="card-title">{{ index + 1 }}.{{ item.title }}</span>
+            <div class="card-short" v-if="item.short">{{ item.short }}</div>
+          </div>
           <div class="card-level-tags">
             <el-tag
               v-if="item.level === 1"
@@ -192,19 +195,29 @@ export default {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px; /* 缩小卡片之间的间隙 */
+  gap: 10px;
 }
 .question-card {
   min-height: 200px;
-  padding: 5px; /* 进一步减少卡片内边距 */
+  padding: 5px; 
 }
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 5px; /* 减少标题底部间隙 */
+  align-items: flex-start;
+  padding-bottom: 5px;
   border-bottom: 1px solid #ebeef5;
-  margin-bottom: 5px; /* 减少标题与答案区域的间隙 */
+  margin-bottom: 5px;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card-short {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
 }
 .card-index {
   margin-right: 5px;
