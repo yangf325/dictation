@@ -43,6 +43,14 @@ import chapter6Questions from "./datas/data6.js";
 import chapter7Questions from "./datas/data7.js";
 import chapter8Questions from "./datas/data8.js";
 import chapter9to11Questions from "./datas/data9.js";
+import chapter12Questions from "./datas/data12.js";
+import chapter13Questions from "./datas/data13.js";
+import chapter14Questions from "./datas/data14.js";
+import chapter15Questions from "./datas/data15.js";
+import chapter16Questions from "./datas/data16.js";
+import chapter17Questions from "./datas/data17.js";
+
+console.log("chapter12Questions", chapter12Questions);
 
 export default {
   name: "App",
@@ -61,6 +69,12 @@ export default {
         ...chapter7Questions,
         ...chapter8Questions,
         ...chapter9to11Questions,
+        ...chapter12Questions,
+        ...chapter13Questions,
+        ...chapter14Questions,
+        ...chapter15Questions,
+        ...chapter16Questions,
+        ...chapter17Questions,
       ],
       filteredQuestions: [],
       currentMode: "write",
