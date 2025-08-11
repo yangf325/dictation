@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './App.vue';
+import Home from './Home.vue';
+import RecitePage from './components/RecitePage.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: App }
+  { path: '/', component: Home },
+  { path: '/m', component: RecitePage }
 ];
 
 const router = new VueRouter({ routes });
