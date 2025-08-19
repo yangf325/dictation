@@ -68,7 +68,7 @@
                   v-for="(ans, ansIndex) in question.answer"
                   :key="ansIndex"
                 >
-                  {{ ans }}
+                  {{ansIndex + 1}}、{{ ans }}
                 </li>
               </ul>
             </div>
@@ -264,7 +264,7 @@ export default {
 
 /* 卡片容器样式 */
 .card-container {
-  padding: 15px;
+  padding: 5px;
 }
 
 /* 问题卡片样式 */
@@ -372,7 +372,7 @@ export default {
 }
 
 .question-answer ul {
-  padding-left: 20px;
+  padding-left: 0px;
   margin: 0;
 }
 
@@ -450,6 +450,10 @@ export default {
 
   .mode-toggle-btn {
     order: 3;
+  }
+  .answer-item{
+    list-style: none;
+    padding: 0;
   }
 }
 </style>
