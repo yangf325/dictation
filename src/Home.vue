@@ -49,6 +49,12 @@ import chapter14Questions from "./datas/data14.js";
 import chapter15Questions from "./datas/data15.js";
 import chapter16Questions from "./datas/data16.js";
 import chapter17Questions from "./datas/data17.js";
+import chapter18Questions from "./datas/data18.js";
+import chapter19Questions from "./datas/data19.js";
+import chapter20Questions from "./datas/data20.js";
+import chapter21Questions from "./datas/data21.js";
+import chapter22Questions from "./datas/data22.js";
+import chapter23Questions from "./datas/data23.js";
 
 console.log("chapter12Questions", chapter12Questions);
 
@@ -75,6 +81,12 @@ export default {
         ...chapter15Questions,
         ...chapter16Questions,
         ...chapter17Questions,
+        ...chapter18Questions,
+        ...chapter19Questions,
+        ...chapter20Questions,
+        ...chapter21Questions,
+        ...chapter22Questions,
+        ...chapter23Questions,
       ],
       filteredQuestions: [],
       currentMode: "write",
