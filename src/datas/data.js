@@ -2,7 +2,7 @@
 const questions = [
   {
     chapter: 4,
-    short: "战甲主机认智障",
+    short: "信主阻击任自爆",
     level: 1,
     title: "信息系统规划的主要内容",
     answer: [
@@ -17,7 +17,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "任明配车及时",
+    short: "任明配策计实",
     level: 2,
     title: "任务体系部署的主要过程",
     answer: [
@@ -31,7 +31,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "别管钓友",
+    short: "别关调优，别管钓友",
     level: 2,
     title: "资源体系调度的内容",
     answer: [
@@ -43,16 +43,16 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "全职技术人员",
+    short: "全织技数人源",
     level: 2,
     title: "保障体系的内容",
     answer: [
-      "组织保障",
-      "人员保障",
-      "技术保障",
-      "资源保障",
-      "数据保障",
       "安全保障",
+      "组织保障",
+      "技术保障",
+      "数据保障",
+      "人员保障",
+      "资源保障",
     ],
   },
   {
@@ -70,7 +70,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "主页用仙子",
+    short: "主业用现数",
     level: 2,
     title: "内部需求挖掘的主要工作任务",
     answer: [
@@ -83,20 +83,20 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "冤案传导演",
+    short: "原案传导演",
     level: 3,
     title: "内部需求挖掘的注意事项",
     answer: [
       "以原始信息获取为主",
       "避免直接给出解决方案",
-      "及时开展引导性培训",
       "谨慎信息交叉传递",
+      "及时开展引导性培训",
       "关注隐形需求的推演",
     ],
   },
   {
     chapter: 4,
-    short: "科技归还国行",
+    short: "国航寂静课标",
     level: 2,
     title: "外部需求挖掘的主要工作任务",
     answer: [
@@ -107,11 +107,10 @@ const questions = [
       "客户期望调研",
       "标准与规范引用",
     ],
-    short: "科技归还国行",
   },
   {
     chapter: 4,
-    short: "",
+    short: "战定安",
     level: 3,
     title: "外部需求挖掘的注意事项",
     answer: ["国家战略与政策引用", "定性内容转定量对比", "避免信息安全事件"],
