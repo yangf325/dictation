@@ -45,6 +45,13 @@
           >
             {{ levelLabels[question.level] }}
           </div>
+          <button
+            class="mode-toggle-btn"
+            @click="toggleMode(index)"
+            :class="{ mode2: cardModes[index] == 'read' }"
+          >
+            {{ modes[cardModes[index]] }}
+          </button>
           <div class="question-chapter">第{{ question.chapter }}章</div>
         </div>
         <div class="card-body">
@@ -52,17 +59,26 @@
           <div class="question-short" v-if="question.short">
             <span class="short-label">速记:</span> {{ question.short }}
           </div>
-          <div class="question-answer">
-            <div class="answer-title">答案:</div>
-            <ul>
-              <li
-                class="answer-item"
-                v-for="(ans, ansIndex) in question.answer"
-                :key="ansIndex"
-              >
-                {{ ans }}
-              </li>
-            </ul>
+          <div class="answer-input-container">
+            <div class="question-answer" v-if="cardModes[index] === 'read'">
+              <div class="answer-title">答案:</div>
+              <ul>
+                <li
+                  class="answer-item"
+                  v-for="(ans, ansIndex) in question.answer"
+                  :key="ansIndex"
+                >
+                  {{ ans }}
+                </li>
+              </ul>
+            </div>
+            <div class="input-area" v-else>
+              <textarea
+                v-model="userAnswers[index]"
+                placeholder="请输入答案..."
+                :rows="Math.max(3, question.answer.length)"
+              ></textarea>
+            </div>
           </div>
         </div>
         <div class="card-footer">
@@ -91,6 +107,13 @@ import chapter14Questions from "../datas/data14.js";
 import chapter15Questions from "../datas/data15.js";
 import chapter16Questions from "../datas/data16.js";
 import chapter17Questions from "../datas/data17.js";
+// 导入18-23章数据
+import chapter18Questions from "../datas/data18.js";
+import chapter19Questions from "../datas/data19.js";
+import chapter20Questions from "../datas/data20.js";
+import chapter21Questions from "../datas/data21.js";
+import chapter22Questions from "../datas/data22.js";
+import chapter23Questions from "../datas/data23.js";
 
 export default {
   name: "RecitePage",
@@ -109,6 +132,12 @@ export default {
         ...chapter15Questions,
         ...chapter16Questions,
         ...chapter17Questions,
+        ...chapter18Questions,
+        ...chapter19Questions,
+        ...chapter20Questions,
+        ...chapter21Questions,
+        ...chapter22Questions,
+        ...chapter23Questions,
       ],
       filteredQuestions: [],
       selectedChapter: "",
@@ -119,6 +148,13 @@ export default {
         2: "重要",
         3: "可选",
       },
+      // 新增模式相关状态
+      modes: {
+        read: "去默写",
+        write: "去阅读",
+      },
+      cardModes: {}, // 存储每个卡片的模式
+      userAnswers: {}, // 存储用户的答案
     };
   },
   computed: {
@@ -146,12 +182,32 @@ export default {
           question.level === parseInt(this.selectedLevel);
         return chapterMatch && levelMatch;
       });
+      // 初始化所有卡片模式为阅读模式
+      this.filteredQuestions.forEach((_, index) => {
+        this.$set(this.cardModes, index, "read");
+        this.$set(this.userAnswers, index, "");
+      });
     },
     handleScroll() {
       this.showBackToTop = window.scrollY > 300;
     },
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    // 新增切换模式方法
+    toggleMode(index) {
+      const currentMode = this.cardModes[index];
+      const newMode = currentMode === "read" ? "write" : "read";
+      this.$set(this.cardModes, index, newMode);
+    },
+    // 新增检查答案方法
+    checkAnswer(index) {
+      const question = this.filteredQuestions[index];
+      const userAnswer = this.userAnswers[index];
+      // 这里可以实现答案检查逻辑
+      alert(
+        `你的答案:\n${userAnswer}\n\n正确答案:\n${question.answer.join("\n")}`
+      );
     },
   },
 };
@@ -226,7 +282,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 10px; */
+  margin-bottom: 10px;
 }
 
 .level-tag {
@@ -247,6 +303,23 @@ export default {
 
 .level-3 {
   background-color: #ffcc00;
+}
+
+/* 新增模式切换按钮样式 */
+.mode-toggle-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 22px;
+  cursor: pointer;
+  margin: 0 5px;
+  width: 120px;
+  height: 40px;
+}
+.mode-toggle-btn.mode2 {
+  background-color: #34a853;
 }
 
 .question-chapter {
@@ -279,8 +352,16 @@ export default {
   margin-right: 5px;
 }
 
+/* 答案和输入框容器 */
+.answer-input-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+}
+
 .question-answer {
   margin-top: 15px;
+  flex: 1;
 }
 
 .answer-title {
@@ -298,19 +379,45 @@ export default {
 .question-answer li {
   margin-bottom: 8px;
   line-height: 1.5;
-  color: #444;
+}
+
+/* 输入区域样式 */
+.input-area {
+  margin-top: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-area textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 18px;
+  resize: none;
+  min-height: 100px;
+}
+
+.check-answer-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #34a853;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-start;
 }
 
 .card-footer {
-  text-align: center;
-  margin-top: 5px;
-  font-size: 14px;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 16px;
   color: #666;
 }
-.answer-item {
-}
 
-/* 回到顶部按钮 */
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -318,20 +425,31 @@ export default {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #409eff;
+  background-color: #4285f4;
   color: white;
   border: none;
-  font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
   cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 100;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.back-to-top:hover {
-  background-color: #2e8ae6;
+/* 手机适配样式 */
+@media (max-width: 600px) {
+  .card-header {
+    flex-wrap: wrap;
+  }
+
+  .level-tag,
+  .mode-toggle-btn,
+  .question-chapter {
+    margin: 3px 0;
+  }
+
+  .mode-toggle-btn {
+    order: 3;
+  }
 }
 </style>
