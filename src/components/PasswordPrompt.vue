@@ -31,8 +31,10 @@ export default {
       if (validPasswords.includes(this.password)) {
         // 密码正确，设置本地存储标记
         localStorage.setItem('passwordVerified', 'true');
-        // 刷新页面
-        window.location.reload();
+        
+        // 获取之前保存的路径，如果不存在则默认为'/'
+        const previousPath = localStorage.getItem('previousPath') || '/';
+        this.$router.push(previousPath);
       } else {
         this.errorMsg = '密码错误，请重试';
         setTimeout(() => {

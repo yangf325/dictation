@@ -25,6 +25,8 @@ router.beforeEach((to, from, next) => {
     
     // 如果未验证且不是去密码页面，则重定向到密码页面
     if (!isVerified && to.path !== '/password') {
+      // 保存用户原来想要访问的路径
+      localStorage.setItem('previousPath', to.path);
       next('/password');
     } else {
       next();
