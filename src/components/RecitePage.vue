@@ -215,8 +215,8 @@ export default {
 .question-card {
   background-color: #fff;
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -226,7 +226,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  /* margin-bottom: 10px; */
 }
 
 .level-tag {
@@ -259,18 +259,18 @@ export default {
 }
 
 .question-title {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin: 5px 0;
   color: #333;
 }
 
 .question-short {
   background-color: #f5f5f5;
-  font-size: 28px;
+  font-size: 20px;
   padding: 10px;
   border-radius: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .short-label {
@@ -284,7 +284,7 @@ export default {
 }
 
 .answer-title {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
@@ -303,13 +303,11 @@ export default {
 
 .card-footer {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   font-size: 14px;
   color: #666;
 }
 .answer-item {
-  font-size: 28px;
-  font-weight: bold;
 }
 
 /* 回到顶部按钮 */
