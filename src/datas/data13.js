@@ -15,7 +15,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2, // 尽量背
+        level: 3, // 尽量背
         title: "工作分析的作用?",
         answer: [
             "招聘和选择员工。",
@@ -23,11 +23,11 @@ const chapter13Questions = [
             "薪酬政策。",
             "组织与岗位设计。"
         ],
-        short: "招聘新岗"
+        short: "招评新组"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "工作分析的步骤?",
         answer: [
             "明确工作分析范围。",
@@ -35,11 +35,11 @@ const chapter13Questions = [
             "工作信息收集和分析。",
             "评价工作分析方法。"
         ],
-        short: "犯法售假"
+        short: "犯法售价"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "工作分析的核心流程?",
         answer: [
             "明确工作分析对象。",
@@ -51,7 +51,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "岗位设计的主要内容?",
         answer: [
             "工作内容设计。",
@@ -62,7 +62,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "人力资源需求超过供给的解决方法?",
         answer: [
             "增加录用的数量。",
@@ -72,7 +72,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "人力资源供给超过需求的解决方法?",
         answer: [
             "减少加班数量或工作时间。",
@@ -81,11 +81,11 @@ const chapter13Questions = [
             "让组织的供货商等上游合作伙伴以比较低廉的费率使用自己闲置的人力资源和生产设备。",
             "辞退。"
         ],
-        short: "减少时间,鼓励退休,减少数量,低廉费率,辞退"
+        short: "加推推仙剑"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "人力资源计划的组成?",
         answer: [
             "供给报表。",
@@ -96,7 +96,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "人力资源计划评价的比较项?",
         answer: [
             "实际的人员招聘数量与预测的人员需求量;",
@@ -108,11 +108,11 @@ const chapter13Questions = [
             "行动方案的实际成本与行动方案的预算;",
             "行动方案的成本与收益。"
         ],
-        short: "招聘数量,工作效率,流动率,执行的方案,实施结果,人力费用,方案的成本,方案的收益"
+        short: "赵晓刘安国飞奔手，招效流案果费本收"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "招聘活动的步骤?",
         answer: [
             "招聘计划制订。",
@@ -121,11 +121,11 @@ const chapter13Questions = [
             "人员甄选与录用。",
             "招聘评估与反馈。"
         ],
-        short: "寄信情人找"
+        short: "寄信请录屏"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "招聘计划的内容?",
         answer: [
             "招聘的岗位、人员需求量、每个岗位的具体要求。",
@@ -136,11 +136,11 @@ const chapter13Questions = [
             "招聘预算。",
             "招聘结束时间与新员工到位时间。"
         ],
-        short: "岗位,时间,来源,方法,实施,预算,结束"
+        short: "港式犯法失算时"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "招聘评估的内容?",
         answer: [
             "招聘周期。",
@@ -153,7 +153,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "招聘面试的程序?",
         answer: [
             "面试前的准备。",
@@ -164,7 +164,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "招聘效果的评估维度?",
         answer: [
             "招聘周期。",
@@ -177,11 +177,11 @@ const chapter13Questions = [
             "新员工满意度。",
             "外部渠道依赖性。"
         ],
-        short: "七簿功达本,试才新渠道"
+        short: "招人功达本,试才新渠道"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "员工培训的基本步骤?",
         answer: [
             "评估组织开展员工培训的需求。",
@@ -189,11 +189,11 @@ const chapter13Questions = [
             "设计培训项目。",
             "培训的实施和评估。"
         ],
-        short: "评估需求,设定目标,设计项目,实施和评估"
+        short: "虚标设施"
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "绩效管理的环节?",
         answer: [
             "绩效计划。",
@@ -205,7 +205,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 2,
+        level: 3,
         title: "绩效改进过程的步骤?",
         answer: [
             "分析员工的绩效考核结果,找出员工绩效中存在的问题。",

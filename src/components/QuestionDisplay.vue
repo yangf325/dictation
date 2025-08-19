@@ -30,7 +30,7 @@
             >第一题</el-button
           >
           <el-button @click="$emit('prev-question')" size="small"
-            >/上题/</el-button
+            >+上题+</el-button
           >
           <el-button @click="$emit('random-question')" size="small"
             >*随机*</el-button
@@ -130,10 +130,10 @@ export default {
     },
     // 移除 handleMouseDown 方法
     handleKeyDown(event) {
-      const keys = ["/", "*", "-", "=", "Home"];
+      const keys = ["+", "*", "-", "=", "Home"];
       if (keys.includes(event.key)) {
         event.preventDefault();
-        if (event.key === "/") {
+        if (event.key === "+") {
           // / 键
           this.$emit("prev-question");
         } else if (event.key === "*") {

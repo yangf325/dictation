@@ -2,7 +2,7 @@
 const chapter14Questions = [
     {
         chapter: 14,
-        level: 2, // 尽量背
+        level: 3, // 尽量背
         title: "基于岗位职责的流程规划工作路径?",
         answer: [
             "流程管理部门先确定每个部门的代表性岗位。",
@@ -12,11 +12,11 @@ const chapter14Questions = [
             "与各部门负责人访谈,补充和完善访谈结果。",
             "汇总各部门的流程信息,完成流程清单和流程框架等。"
         ],
-        short: "确定岗位,工作访谈,分解工作,梳理要点,完善结果,汇总信息"
+        short: "缺糖分观望中"
     },
     {
         chapter: 14,
-        level: 2,
+        level: 3,
         title: "基于业务模型的流程规划工作路径?",
         answer: [
             "流程管理部门根据组织业务绘制业务模式简易模型。",
@@ -25,11 +25,11 @@ const chapter14Questions = [
             "无法对接的部门,由流程管理部门与代表岗位人员进行工作访谈。",
             "完成流程清单和流程总图。"
         ],
-        short: "绘制模型,模型分解,关联对接,工作访谈,完成总图"
+        short: "慧姐接糖丸"
     },
     {
         chapter: 14,
-        level: 2,
+        level: 3,
         title: "保障流程管理有效执行可参考的措施?",
         answer: [
             "理解流程是执行流程的前提。",
@@ -41,11 +41,11 @@ const chapter14Questions = [
             "把流程固化到制度中。",
             "流程文化宣导。"
         ],
-        short: "理解是前提,做好推广,流程培训,找对负责人,审计及监控,固化到系统,固化到制度,文化宣导"
+        short: "解推心流身心制选"
     },
     {
         chapter: 14,
-        level: 2,
+        level: 3,
         title: "流程稽查的基本实施步骤?",
         answer: [
             "理解流程的目的、目标及管理原则。",
@@ -56,11 +56,11 @@ const chapter14Questions = [
             "提交流程稽查报告。",
             "跟进流程稽查问题整改。"
         ],
-        short: "理解目的,确定关键点,确定方法,设计线路,开展稽查,提交报告,问题整改"
+        short: "标点法线展爆改"
     },
     {
         chapter: 14,
-        level: 2,
+        level: 3,
         title: "流程效率的典型指标?",
         answer: [
             "处理时间。",
@@ -72,7 +72,7 @@ const chapter14Questions = [
     },
     {
         chapter: 14,
-        level: 2,
+        level: 3,
         title: "流程绩效评估结果分析的内容?",
         answer: [
             "与流程绩效目标对比分析。",
@@ -80,11 +80,11 @@ const chapter14Questions = [
             "与同行业的主要竞争对手进行流程绩效对比分析。",
             "对流程绩效评估结果的稳定性进行分析。"
         ],
-        short: "目标分析,内部比较,对手分析,评估分析"
+        short: "目内竞稳"
     },
     {
         chapter: 14,
-        level: 2,
+        level: 3,
         title: "流程审计的流程?",
         answer: [
             "制订计划。",
@@ -103,7 +103,7 @@ const chapter14Questions = [
     },
     {
         chapter: 14,
-        level: 2,
+        level: 3,
         title: "流程检查结果的应用?",
         answer: [
             "流程优化。",
@@ -112,7 +112,7 @@ const chapter14Questions = [
             "纠正措施。",
             "战略调整。"
         ],
-        short: "粘锅就留级"
+        short: "留级过正整"
     }
 ];
 

@@ -2,7 +2,7 @@
 const chapter16Questions = [
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "研发测试环境的构成?",
     answer: [
       "开发机器的获取。",
@@ -14,7 +14,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "配置管理工具的功能模块?",
     answer: [
       "项目管理。",
@@ -28,7 +28,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "配置管理工具的主要功能?",
     answer: [
       "项目管理。",
@@ -44,7 +44,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "软件自动化测试的阶段?",
     answer: [
       "自动化测试计划。",
@@ -56,7 +56,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "测试管理工具的主要功能?",
     answer: [
       "测试计划管理。",
@@ -71,28 +71,28 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "测试管理工具的核心?",
     answer: ["测试用例库。", "缺陷库。"],
     short: "无需口诀,直接背",
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "围绕测试用例的管理内容?",
     answer: ["测试用例管理。", "测试套件管理。", "测试执行结果。"],
     short: "用例,套件,执行",
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "围绕缺陷的管理内容?",
     answer: ["缺陷记录。", "缺陷跟踪。", "分析报告。"],
     short: "记忠告",
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "研发测试环境搭建和维护的原则?",
     answer: [
       "可重现性。",
@@ -107,14 +107,14 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "研发测试环境部署所需的环境?",
     answer: ["硬件环境。", "操作系统环境。", "应用程序环境。", "数据库环境。"],
     short: "硬座用具",
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "研发测试环境部署的步骤?",
     answer: [
       "硬件设备的选取和配置。",
@@ -127,7 +127,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "研发测试环境维护的要求?",
     answer: [
       "定期备份研发测试环境数据。",
@@ -139,14 +139,14 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "监控工具的种类?",
     answer: ["IT基础设施监控。", "性能监控。", "业务运营监控。"],
     short: "基础,性能,运营",
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "统一运维监控体系的模块?",
     answer: [
       "数据采集。",
@@ -160,14 +160,14 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "核心的ITSM流程?",
     answer: ["服务请求管理。", "事件管理。", "问题管理。", "变更管理。"],
     short: "请示问遍",
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "备品备件管理的常见功能?",
     answer: [
       "库存信息管理。",
@@ -179,7 +179,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 2,
+    level: 3,
     title: "选择项目管理工具的考虑因素?",
     answer: ["团队规模。", "业务需求。", "易用性。", "安全性。", "成本。"],
     short: "团务用全本",

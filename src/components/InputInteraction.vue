@@ -60,6 +60,8 @@
 
 .el-tag {
   font-size: 16px;
+  white-space: wrap;
+  height: auto;
 }
 </style>
 
