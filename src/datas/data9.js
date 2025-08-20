@@ -11,7 +11,7 @@ const chapter9to11Questions = [
     chapter: 9,
     level: 2, // “重点背” 对应级别 2
     title: "信息安全规划的注意事项?",
-    short: "",
+    short: "求战求解",
     answer: [
       "追求有效益的安全。",
       "信息安全战略的校准。",
@@ -23,7 +23,7 @@ const chapter9to11Questions = [
     chapter: 9,
     level: 1, // “必须背” 对应级别 1
     title: "信息安全规划的主要内容?",
-    short: "",
+    short: "宿主管基因",
     answer: [
       "关注利益相关方的安全诉求。",
       "信息安全组织体系规划。",
@@ -36,7 +36,7 @@ const chapter9to11Questions = [
     chapter: 10,
     level: 2, // “重点背” 对应级别 2
     title: "云原生架构的设计原则?",
-    short: "官人复谈志玲家",
+    short: "官人复谈志玲家，观韧服弹自零架",
     answer: [
       "可观测。",
       "韧性。",
@@ -81,7 +81,7 @@ const chapter9to11Questions = [
       "风险管理。",
       "绩效管理。",
     ],
-    short: "疯子租架战机",
+    short: "风资组价战绩",
   },
   {
     chapter: 11,
@@ -89,13 +89,13 @@ const chapter9to11Questions = [
     title: "IT治理活动的主要任务?",
     short: "",
     answer: [
-      "全局统筹。",
-      "价值导向。",
-      "机制保障。",
       "创新发展。",
       "文化助推。",
+      "机制保障。",
+      "价值导向。",
+      "全局统筹。",
     ],
-    short: "新推鸡架桶",
+    short: "新文机价桶",
   },
   {
     chapter: 11,

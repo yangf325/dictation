@@ -265,7 +265,7 @@ export default {
 .question-header {
   flex: 1;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 0;
 }
 .progress-info {

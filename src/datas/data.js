@@ -70,7 +70,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "主业用现数",
+    short: "李书记骨感",
     level: 2,
     title: "内部需求挖掘的主要工作任务",
     answer: [
@@ -133,14 +133,14 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "勾践发疫",
+    short: "勾践发疯",
     level: 3,
     title: "场景化模型分析的关键价值",
     answer: [
+      "促进信息规划的共识和沟通",
       "提高规划决策的科学性和实践性",
       "确保规划与组织发展的衔接",
       "降低规划风险和成本",
-      "促进信息规划的共识和沟通",
     ],
   },
   {
@@ -171,7 +171,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "足协陪",
+    short: "足协配",
     level: 3,
     title: "整体规划重点关注的内容?",
     answer: [
@@ -182,7 +182,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "鹰网云,新安生",
+    short: "用网生，安舒服",
     level: 3,
     title: "专项规划的内容?",
     answer: [
@@ -200,15 +200,15 @@ const questions = [
     level: 3,
     title: "专项规划重点关注的内容?",
     answer: [
-      "需要清晰明确信息系统的管理和使用主体。",
       "强调单项领域的规划系统性。",
+      "需要清晰明确信息系统的管理和使用主体。",
       "技术路线和技术属性需要进一步明确和强化。",
       "需要配套更加细致的实施路径或计划。",
     ],
   },
   {
     chapter: 4,
-    short: "组织管体检",
+    short: "组织管体制",
     level: 3,
     title: "持续改进需要关注的内容?",
     answer: [
