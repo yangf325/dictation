@@ -332,7 +332,7 @@ export default {
 }
 
 .question-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
   margin: 5px 0;
   color: #333;
@@ -360,7 +360,7 @@ export default {
 }
 
 .question-answer {
-  margin-top: 15px;
+  margin-top: 5px;
   flex: 1;
 }
 
@@ -452,6 +452,8 @@ export default {
     order: 3;
   }
   .answer-item{
+    font-size: 24px;
+    font-weight: bold;
     list-style: none;
     padding: 0;
   }

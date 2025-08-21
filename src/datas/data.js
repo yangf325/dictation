@@ -255,7 +255,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "战功建绩数",
+    short: "战功建绩",
     level: 3,
     title: "关键成功因素CSF的实施步骤?",
     answer: [
