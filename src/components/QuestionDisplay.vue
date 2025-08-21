@@ -130,7 +130,7 @@ export default {
     },
     // 移除 handleMouseDown 方法
     handleKeyDown(event) {
-      const keys = ["+", "*", "-", "=", "Home"];
+      const keys = ["+", "*", "-", "="];
       if (keys.includes(event.key)) {
         event.preventDefault();
         if (event.key === "+") {
@@ -147,7 +147,7 @@ export default {
           this.$emit("toggle-answer", !this.showAnswer);
         } else if (event.key === "Home") {
           //home jian
-          this.$emit("first-question");
+          // this.$emit("first-question");
         }
       }
     },

@@ -133,11 +133,11 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "勾践发疯",
+    short: "勾践接风",
     level: 3,
     title: "场景化模型分析的关键价值",
     answer: [
-      "促进信息规划的共识和沟通",
+      "促进信息系统规划的共识和沟通",
       "提高规划决策的科学性和实践性",
       "确保规划与组织发展的衔接",
       "降低规划风险和成本",
@@ -145,7 +145,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "求模式",
+    short: "成模式",
     level: 3,
     title: "深度诊断与评估的内容？",
     answer: ["成熟度与需求控制", "诊断与评估模型确立", "诊断与评估实施"],
@@ -171,7 +171,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "足协配",
+    short: "一一配",
     level: 3,
     title: "整体规划重点关注的内容?",
     answer: [
@@ -208,7 +208,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "组织管体制",
+    short: "战创安用剑",
     level: 3,
     title: "持续改进需要关注的内容?",
     answer: [
@@ -221,7 +221,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "转化关系Zachman",
+    short: "转化关系-转划关析z",
     level: 2,
     title: "信息系统规划的常用方法?",
     answer: [
@@ -234,28 +234,28 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "一识别,二验证",
+    short: "识别验证",
     level: 3,
     title: "战略目标集转移法中信息系统战略规划过程的步骤?",
     answer: ["识别和解释组织战略集", "进一步解释和验证组织战略集。"],
   },
   {
     chapter: 4,
-    short: "木工书信",
+    short: "木工数信",
     level: 3,
     title: "企业信息系统规划法的基本步骤?",
     answer: ["定义管理目标", "定义管理功能", "定义数据类", "定义信息结构"],
   },
   {
     chapter: 4,
-    short: "内外空间",
+    short: "内外控建",
     level: 3,
     title: "关键成功因素的主要特征?",
     answer: ["内部型 CSF", "外部型CSF", "监控型 CSF", "建立型CSF"],
   },
   {
     chapter: 4,
-    short: "战功建树",
+    short: "战功建绩数",
     level: 3,
     title: "关键成功因素CSF的实施步骤?",
     answer: [
@@ -267,7 +267,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: ":识别,增加,减少,技术",
+    short: "识增减技",
     level: 3,
     title: "价值链分析法应用的基本步骤?",
     answer: [
@@ -292,7 +292,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "范启教击相公",
+    short: "范企统计细工",
     level: 3,
     title: "Zachman 框架的纵向维度?",
     answer: [
@@ -306,7 +306,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "仅限购茶花油",
+    short: "仅羡慕差计化",
     level: 3,
     title: "采用 Zachman 框架进行信息系统规划的一般步骤?",
     answer: [
@@ -317,7 +317,6 @@ const questions = [
       "制订实施计划。",
       "持续改进优化。",
     ],
-    short: "仅限购茶花油",
   },
 ];
 
