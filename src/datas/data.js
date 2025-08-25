@@ -196,7 +196,7 @@ const questions = [
   },
   {
     chapter: 4,
-    short: "单管技师",
+    short: "单体技师",
     level: 3,
     title: "专项规划重点关注的内容?",
     answer: [

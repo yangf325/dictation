@@ -62,6 +62,11 @@ export default {
   components: {
     ModeSwitcher,
   },
+  mounted() {
+    setTimeout(() => {
+      this.$emit("filter-changed", { chapter: [7] });
+    }, 100);
+  },
   props: ["initialFilter", "chapters", "levels"],
   data() {
     return {

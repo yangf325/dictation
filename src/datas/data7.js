@@ -30,7 +30,7 @@ const chapter7Questions = [
   {
     chapter: 7,
     level: 2, // “重点背” 对应级别 2
-    short: "贫富量机主",
+    short: "贫富量基组",
     title: "无线网规划应重点关注的内容?",
     answer: [
       "无线频率规划。",
@@ -43,7 +43,7 @@ const chapter7Questions = [
   {
     chapter: 7,
     level: 1, // “必须背” 对应级别 1
-    short: "网安集中简介",
+    short: "网安集中控能",
     title: "网络整体规划的重点事项?",
     answer: [
       "网络管理维护。",
