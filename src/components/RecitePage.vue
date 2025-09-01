@@ -88,6 +88,9 @@
     </div>
 
     <!-- 回到顶部按钮 -->
+    <button class="global-mode-toggle" v-if="showBackToTop" @click="toggleGlobalMode">
+      {{ globalMode === 'read' ? '默' : '读' }}
+    </button>
     <button class="back-to-top" v-if="showBackToTop" @click="scrollToTop">
       ↑
     </button>
@@ -155,6 +158,7 @@ export default {
       },
       cardModes: {}, // 存储每个卡片的模式
       userAnswers: {}, // 存储用户的答案
+      globalMode: 'read', // 新增全局模式状态
     };
   },
   computed: {
@@ -174,17 +178,13 @@ export default {
   methods: {
     filterQuestions() {
       this.filteredQuestions = this.allQuestions.filter((question) => {
-        const chapterMatch =
-          !this.selectedChapter ||
-          question.chapter === parseInt(this.selectedChapter);
-        const levelMatch =
-          !this.selectedLevel ||
-          question.level === parseInt(this.selectedLevel);
+        const chapterMatch = !this.selectedChapter || question.chapter === parseInt(this.selectedChapter);
+        const levelMatch = !this.selectedLevel || question.level === parseInt(this.selectedLevel);
         return chapterMatch && levelMatch;
       });
-      // 初始化所有卡片模式为阅读模式
+      // 初始化所有卡片模式为全局模式
       this.filteredQuestions.forEach((_, index) => {
-        this.$set(this.cardModes, index, "read");
+        this.$set(this.cardModes, index, this.globalMode);
         this.$set(this.userAnswers, index, "");
       });
     },
@@ -208,6 +208,14 @@ export default {
       alert(
         `你的答案:\n${userAnswer}\n\n正确答案:\n${question.answer.join("\n")}`
       );
+    },
+    // 新增全局模式切换方法
+    toggleGlobalMode() {
+      this.globalMode = this.globalMode === 'read' ? 'write' : 'read';
+      // 应用全局模式到所有卡片
+      this.filteredQuestions.forEach((_, index) => {
+        this.$set(this.cardModes, index, this.globalMode);
+      });
     },
   },
 };
@@ -416,6 +424,20 @@ export default {
   margin-top: 10px;
   font-size: 16px;
   color: #666;
+}
+
+.global-mode-toggle {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 10px 16px;
+  background-color: #ea4335;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .back-to-top {

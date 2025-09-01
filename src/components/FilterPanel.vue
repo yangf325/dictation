@@ -64,7 +64,7 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.$emit("filter-changed", { chapter: [7] });
+      this.$emit("filter-changed", { chapter: [12] });
     }, 100);
   },
   props: ["initialFilter", "chapters", "levels"],

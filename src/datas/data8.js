@@ -143,7 +143,7 @@ const chapter8Questions = [
     chapter: 8,
     level: 2, // “重点背” 对应级别 2
     title: "数据治理的活动?",
-    short: "",
+    short: "硅脂是钱",
     answer: [
       "规划组织的数据治理。",
       "制定数据治理战略。",
@@ -155,7 +155,7 @@ const chapter8Questions = [
     chapter: 8,
     level: 3, // “尽量背” 对应级别 3
     title: "数据质量的活动?",
-    short: "",
+    short: "定义数据战略，识别规则，执行评估，识别方向，定义目标，开发操作 ",
     answer: [
       "定义高质量数据。",
       "定义数据质量战略。",
