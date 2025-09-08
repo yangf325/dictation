@@ -104,7 +104,9 @@ import chapter6Questions from "../datas/data6.js";
 import chapter7Questions from "../datas/data7.js";
 import chapter8Questions from "../datas/data8.js";
 import chapter9to11Questions from "../datas/data9.js";
-import chapter12Questions from "../datas/data12.js";
+import chapter1212Questions from "../datas/data12.12.js";
+import chapter1234Questions from "../datas/data12.34.js";
+import chapter125Questions from "../datas/data12.5.js";
 import chapter13Questions from "../datas/data13.js";
 import chapter14Questions from "../datas/data14.js";
 import chapter15Questions from "../datas/data15.js";
@@ -129,7 +131,9 @@ export default {
         ...chapter7Questions,
         ...chapter8Questions,
         ...chapter9to11Questions,
-        ...chapter12Questions,
+        ...chapter1212Questions,
+        ...chapter1234Questions,
+        ...chapter125Questions,
         ...chapter13Questions,
         ...chapter14Questions,
         ...chapter15Questions,
@@ -178,10 +182,12 @@ export default {
   methods: {
     filterQuestions() {
       this.filteredQuestions = this.allQuestions.filter((question) => {
-        const chapterMatch = !this.selectedChapter || question.chapter === parseInt(this.selectedChapter);
+        const chapterMatch = !this.selectedChapter || question.chapter === this.selectedChapter;
+        console.log('chapterMatch', !this.selectedChapter , question.chapter , this.selectedChapter)
         const levelMatch = !this.selectedLevel || question.level === parseInt(this.selectedLevel);
         return chapterMatch && levelMatch;
       });
+      console.log('filteredQuestions', this.filteredQuestions)
       // 初始化所有卡片模式为全局模式
       this.filteredQuestions.forEach((_, index) => {
         this.$set(this.cardModes, index, this.globalMode);
