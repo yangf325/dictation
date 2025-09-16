@@ -28,7 +28,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 3,
+    level: 4,
     title: "配置管理工具的主要功能?",
     answer: [
       "项目管理。",
@@ -107,14 +107,14 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 3,
+    level: 4,
     title: "研发测试环境部署所需的环境?",
     answer: ["硬件环境。", "操作系统环境。", "应用程序环境。", "数据库环境。"],
     short: "硬座用具",
   },
   {
     chapter: 16,
-    level: 3,
+    level: 4,
     title: "研发测试环境部署的步骤?",
     answer: [
       "硬件设备的选取和配置。",
@@ -127,7 +127,7 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 3,
+    level: 4,
     title: "研发测试环境维护的要求?",
     answer: [
       "定期备份研发测试环境数据。",
@@ -160,14 +160,14 @@ const chapter16Questions = [
   },
   {
     chapter: 16,
-    level: 3,
+    level: 4,
     title: "核心的ITSM流程?",
     answer: ["服务请求管理。", "事件管理。", "问题管理。", "变更管理。"],
     short: "请示问遍",
   },
   {
     chapter: 16,
-    level: 3,
+    level: 4,
     title: "备品备件管理的常见功能?",
     answer: [
       "库存信息管理。",

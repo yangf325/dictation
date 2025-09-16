@@ -1,7 +1,7 @@
 const chapter18Questions = [
     {
         chapter: 18,
-        level: 3,
+        level: 4,
         title: "智慧城市的发展关注焦点?（尽量背）",
         answer: [
             "城市治理",
@@ -25,7 +25,7 @@ const chapter18Questions = [
     },
     {
         chapter: 18,
-        level: 3,
+        level: 4,
         title: "智慧城市的发展规划要点?（尽量背）",
         answer: [
             "承接城市战略",
@@ -38,7 +38,7 @@ const chapter18Questions = [
     },
     {
         chapter: 18,
-        level: 3,
+        level: 4,
         title: "智慧城市发展规划可以参考的基本原则?（尽量背）",
         answer: [
             "以人为本,增强用户体验",
@@ -64,7 +64,7 @@ const chapter18Questions = [
     },
     {
         chapter: 18,
-        level: 3,
+        level: 4,
         title: "智慧城市关注的业务与技术融合内容?（尽量背）",
         answer: [
             "数字政府",

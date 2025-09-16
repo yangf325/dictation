@@ -19,6 +19,11 @@
               style="background-color: #ffcc00; color: #fff"
               >可选</el-tag
             >
+            <el-tag
+              v-if="currentQuestion?.level === 4"
+              style="background-color: #3b9d32; color: #fff"
+              >案例</el-tag
+            >
           </div>
           <div class="progress-info">
             {{ currentIndex + 1 }}/{{ questions.length }}
@@ -72,6 +77,11 @@
               v-if="item.level === 3"
               style="background-color: #ffcc00; color: #fff"
               >可选</el-tag
+            >
+            <el-tag
+              v-if="item.level === 4"
+              style="background-color: #3b9d32; color: #fff"
+              >案例</el-tag
             >
           </div>
         </div>
@@ -199,7 +209,7 @@ export default {
 }
 .question-card {
   min-height: 200px;
-  padding: 5px; 
+  padding: 5px;
 }
 .card-header {
   display: flex;

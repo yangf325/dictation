@@ -1,7 +1,7 @@
 const chapter20Questions = [
     {
         chapter: 20,
-        level: 3,
+        level: 4,
         title: "数字乡村发展的关注焦点?（尽量背）",
         answer: [
             "数字经济",
@@ -13,7 +13,7 @@ const chapter20Questions = [
     },
     {
         chapter: 20,
-        level: 3,
+        level: 4,
         title: "数字乡村发展规划的要点?（尽量背）",
         answer: [
             "加强乡村数字基础建设",

@@ -39,7 +39,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 3,
+        level: 4,
         title: "工作分析的核心流程?",
         answer: [
             "明确工作分析对象。",
@@ -51,7 +51,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 3,
+        level: 4,
         title: "岗位设计的主要内容?",
         answer: [
             "工作内容设计。",
@@ -193,7 +193,7 @@ const chapter13Questions = [
     },
     {
         chapter: 13,
-        level: 3,
+        level: 4,
         title: "绩效管理的环节?",
         answer: [
             "绩效计划。",

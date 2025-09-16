@@ -1,7 +1,7 @@
 const chapter19Questions = [
     {
         chapter: 19,
-        level: 3,
+        level: 4,
         title: "智慧园区的发展关注焦点?（尽量背）",
         answer: [
             "招引建设",
@@ -27,7 +27,7 @@ const chapter19Questions = [
     },
     {
         chapter: 19,
-        level: 3,
+        level: 4,
         title: "智慧园区数智化转型提升的方面?（尽量背）",
         answer: [
             "基础设施集约化",

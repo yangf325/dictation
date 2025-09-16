@@ -104,6 +104,7 @@ export default {
     handleFilterChanged(filter) {
       console.log("接收到的筛选条件:", filter); // 添加日志
       this.currentFilter = filter;
+      // localStorage.setItem("currentFilter", JSON.stringify(filter));
       this.filterQuestions();
     },
     resetFilters() {

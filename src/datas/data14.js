@@ -2,7 +2,7 @@
 const chapter14Questions = [
     {
         chapter: 14,
-        level: 3, // 尽量背
+        level: 4, // 尽量背
         title: "基于岗位职责的流程规划工作路径?",
         answer: [
             "流程管理部门先确定每个部门的代表性岗位。",
@@ -16,7 +16,7 @@ const chapter14Questions = [
     },
     {
         chapter: 14,
-        level: 3,
+        level: 4,
         title: "基于业务模型的流程规划工作路径?",
         answer: [
             "流程管理部门根据组织业务绘制业务模式简易模型。",

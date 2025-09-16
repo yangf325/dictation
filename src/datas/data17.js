@@ -2,7 +2,7 @@
 const chapter17Questions = [
     {
         chapter: 17,
-        level: 3,
+        level: 4,
         title: "开发生命周期的类型?",
         answer: [
             "预测型(计划驱动型)。",

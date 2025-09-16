@@ -56,7 +56,7 @@ const chapter7Questions = [
   },
   {
     chapter: 7,
-    level: 3, // “尽量背” 对应级别 3
+    level: 4, // “尽量背” 对应级别 3
     short: "智障能记全",
     title: "网络管理的功能?",
     answer: [
@@ -69,7 +69,7 @@ const chapter7Questions = [
   },
   {
     chapter: 7,
-    level: 3, // “尽量背” 对应级别 3
+    level: 4, // “尽量背” 对应级别 3
     short: "全急险灾线",
     title: "网络安全管理的重点内容?",
     answer: [

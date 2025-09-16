@@ -23,6 +23,7 @@
           <option value="1">必备(1)</option>
           <option value="2">重要(2)</option>
           <option value="3">可选(3)</option>
+          <option value="4">案例(4)</option>
         </select>
       </div>
     </div>
@@ -41,6 +42,7 @@
               'level-1': question.level === 1,
               'level-2': question.level === 2,
               'level-3': question.level === 3,
+              'level-4': question.level === 4,
             }"
           >
             {{ levelLabels[question.level] }}
@@ -154,6 +156,7 @@ export default {
         1: "必备",
         2: "重要",
         3: "可选",
+        4: "案例",
       },
       // 新增模式相关状态
       modes: {
@@ -317,6 +320,10 @@ export default {
 
 .level-3 {
   background-color: #ffcc00;
+}
+
+.level-4 {
+  background-color: #3b9d32;
 }
 
 /* 新增模式切换按钮样式 */

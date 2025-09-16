@@ -256,7 +256,7 @@ const questions = [
   {
     chapter: 4,
     short: "战功建绩",
-    level: 3,
+    level: 4,
     title: "关键成功因素CSF的实施步骤?",
     answer: [
       "确定组织的战略目标。",
@@ -293,7 +293,7 @@ const questions = [
   {
     chapter: 4,
     short: "范企统计细工",
-    level: 3,
+    level: 4,
     title: "Zachman 框架的纵向维度?",
     answer: [
       "范围模型",

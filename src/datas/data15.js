@@ -46,7 +46,7 @@ const chapter15Questions = [
   // 第4题: 技术研发的管理过程?（尽量背）
   {
     chapter: 15,
-    level: 3,
+    level: 4,
     title: "技术研发的管理过程?",
     answer: ["规划过程。", "实施过程。", "监控过程。", "应用过程。"],
     short: "鬼市渐隐",
@@ -139,7 +139,6 @@ const chapter15Questions = [
   {
     chapter: 15,
     level: 3,
-    level: 3,
     title: "发现问题和解决问题相关技术研发的产出物?（尽量背）",
     answer: [
       "具备问题诊断分析功能和有助于问题解决的软硬件工具。",
@@ -204,7 +203,6 @@ const chapter15Questions = [
   {
     chapter: 15,
     level: 3,
-    level: 3,
     title: "知识转移的内容?（尽量背）",
     answer: [
       "历史运维资料。",
@@ -216,8 +214,7 @@ const chapter15Questions = [
   },
   {
     chapter: 15,
-    level: 3,
-    level: 3,
+    level: 4,
     title: "应急预案与演练的情形?（尽量背）",
     answer: [
       "自然灾害引起的对IT系统的灾难性破坏。",
@@ -333,7 +330,7 @@ const chapter15Questions = [
   },
   {
     chapter: 15,
-    level: 3,
+    level: 4,
     title: "知识产权维护的注意事项?（尽量背）",
     answer: [
       "建立知识产权分类管理档案,进行日常维护。",
