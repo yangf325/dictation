@@ -35,7 +35,7 @@ const chapter13Questions = [
             "工作信息收集和分析。",
             "评价工作分析方法。"
         ],
-        short: "犯法售价"
+        short: "犯法收价"
     },
     {
         chapter: 13,
@@ -81,7 +81,7 @@ const chapter13Questions = [
             "让组织的供货商等上游合作伙伴以比较低廉的费率使用自己闲置的人力资源和生产设备。",
             "辞退。"
         ],
-        short: "加推推仙剑"
+        short: "加推推新低"
     },
     {
         chapter: 13,
@@ -136,7 +136,7 @@ const chapter13Questions = [
             "招聘预算。",
             "招聘结束时间与新员工到位时间。"
         ],
-        short: "港式犯法失算时"
+        short: "港发对方测算时"
     },
     {
         chapter: 13,

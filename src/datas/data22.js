@@ -12,7 +12,7 @@ const chapter22Questions = [
             "智慧安全与环保",
             "智慧能源管理"
         ],
-        short: "数字人生无智慧"
+        short: "人设生礼物保管"
     },
     {
         chapter: 22,
@@ -28,7 +28,7 @@ const chapter22Questions = [
     },
     {
         chapter: 22,
-        level: 3,
+        level: 4,
         title: "智能制造规划管理的要点?（尽量背）",
         answer: [
             "多元参与",

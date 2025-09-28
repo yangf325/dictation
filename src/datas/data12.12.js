@@ -59,7 +59,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.12,
-    level: 3, // “尽量背” 对应级别 3
+    level: 1, // “尽量背” 对应级别 3
     title: "SLA、OLA、UC的定义?",
     short: "无需口诀,直接背",
     answer: [
@@ -94,7 +94,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.12,
-    level: 2, // “重点背” 对应级别 2
+    level: 1, // “重点背” 对应级别 2
     title: "人员要素设计的内容?",
     short: "为校训",
     answer: [
@@ -105,7 +105,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.12,
-    level: 3, // “尽量背” 对应级别 3
+    level: 1, // “尽量背” 对应级别 3
     title: "人员要素设计的目标?",
     short: "架数能稳续",
     answer: [
@@ -150,14 +150,14 @@ const chapter12Questions = [
   },
   {
     chapter: 12.12,
-    level: 2, // “重点背” 对应级别 2
+    level: 1, // “重点背” 对应级别 2
     title: "资源要素设计的内容?",
     short: "工服自备",
     answer: ["服务工具。", "服务台。", "备件库。", "知识库。"],
   },
   {
     chapter: 12.12,
-    level: 3, // “尽量背” 对应级别 3
+    level: 1, // “尽量背” 对应级别 3
     title: "常见的信息系统服务工具?",
     short: "见过他",
     answer: ["监控类工具。", "过程管理类工具。", "其他工具。"],
@@ -200,7 +200,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.12,
-    level: 2, // “重点背” 对应级别 2
+    level: 1, // “重点背” 对应级别 2
     title: "技术要素设计的内容?",
     short: "研发姐",
     answer: ["技术研发。", "发现问题的技术。", "解决问题的技术。"],
@@ -221,7 +221,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.12,
-    level: 2, // “重点背” 对应级别 2
+    level: 1, // “重点背” 对应级别 2
     title: "信息系统服务管理过程有哪些?",
     short: "急报问事,自变不安",
     answer: [

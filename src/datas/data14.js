@@ -41,7 +41,7 @@ const chapter14Questions = [
             "把流程固化到制度中。",
             "流程文化宣导。"
         ],
-        short: "解推心流身心制选"
+        short: "理推新人坚固固化"
     },
     {
         chapter: 14,

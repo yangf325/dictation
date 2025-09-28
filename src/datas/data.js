@@ -84,7 +84,7 @@ const questions = [
   {
     chapter: 4,
     short: "原案传导演",
-    level: 3,
+    level: 1,
     title: "内部需求挖掘的注意事项",
     answer: [
       "以原始信息获取为主",
@@ -183,7 +183,7 @@ const questions = [
   {
     chapter: 4,
     short: "用网生，安舒服",
-    level: 3,
+    level: 1,
     title: "专项规划的内容?",
     answer: [
       "应用系统规划",
@@ -209,7 +209,7 @@ const questions = [
   {
     chapter: 4,
     short: "战创安用剑",
-    level: 3,
+    level: 1,
     title: "持续改进需要关注的内容?",
     answer: [
       "持续跟踪组织的战略。",

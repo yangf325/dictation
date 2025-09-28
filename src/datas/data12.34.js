@@ -150,7 +150,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.34,
-    level: 3,
+    level: 1,
     title: "服务退役终止阶段供需双方沟通的会议形式?",
     answer: [
       "服务终止计划编制会议。",

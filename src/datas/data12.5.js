@@ -15,7 +15,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.5,
-    level: 3,
+    level: 1,
     title: "服务测量活动的价值",
     answer: [
       "验证之前所做的决策是否正确,所做的工作是否有效果。",
@@ -155,7 +155,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.5,
-    level: 3,
+    level: 1,
     title: "服务质量的特性?",
     answer: [
       "安全性:可用性、完整性、保密性。",
@@ -168,14 +168,14 @@ const chapter12Questions = [
   },
   {
     chapter: 12.5,
-    level: 2,
+    level: 1,
     title: "服务质量管理的活动?",
     answer: ["服务质量策划。", "服务质量检查。", "服务质量改进。"],
     short: "车差动",
   },
   {
     chapter: 12.5,
-    level: 3,
+    level: 1,
     title: "服务质量策划的内容?",
     answer: [
       "确定服务质量的目标。",
@@ -203,10 +203,10 @@ const chapter12Questions = [
 
   {
     chapter: 12.5,
-    level: 3,
+    level: 1,
     title: "四级服务回顾机制?",
     answer: [
-      "针对重大事件、特殊事件的沟通,包括服务内容变更、客户投诉等。",
+      "一级针对重大事件、特殊事件的沟通,包括服务内容变更、客户投诉等。",
       "项目月度例会,向客户汇报当月服务情况,包括服务量、SLA达成率,当月重大事件等内容。",
       "项目季度回顾,向客户汇报当季项目运营情况,包括服务数据分析、SLA达成率、客户满意度、服务改进计划等内容。",
       "合作年度回顾,回顾项目的整体实施交付情况。",
@@ -247,7 +247,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.5,
-    level: 2,
+    level: 1,
     title: "服务改进的主要活动?",
     answer: ["服务改进设计。", "服务改进实施。", "服务改进验证。"],
     short: "设计,实施,验证",
@@ -266,7 +266,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.5,
-    level: 3,
+    level: 1,
     title: "定义服务改进目标的注意事项?",
     answer: [
       "改进目标应与服务目标相一致。",
@@ -277,7 +277,7 @@ const chapter12Questions = [
   },
   {
     chapter: 12.5,
-    level: 3,
+    level: 1,
     title: "服务改进计划的内容?",
     answer: [
       "文档介绍:包括文档简介、文档目的。",

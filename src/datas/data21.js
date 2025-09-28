@@ -1,14 +1,14 @@
 const chapter21Questions = [
   {
     chapter: 21,
-    level: 3,
+    level: 4,
     title: "企业数字化转型的关注焦点?（尽量背）",
     short: "刻数组文",
     answer: ["客户中心", "数智赋能", "敏捷组织", "新型文化"],
   },
   {
     chapter: 21,
-    level: 3,
+    level: 4,
     title: "企业数字化转型的发展规划要点?（尽量背）",
     short: "动图求解保人",
     answer: [

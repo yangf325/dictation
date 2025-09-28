@@ -15,7 +15,7 @@ const chapter5Questions = [
   },
   {
     chapter: 5,
-    level: 3, // “尽量背” 对应级别 3
+    level: 1, // “尽量背” 对应级别 3
     title: "指导用户界面定义活动的基本原则?",
     answer: ["置用户于控制之下", "减少用户的记忆负担", "保持界面一致"],
   },
@@ -62,7 +62,7 @@ const chapter5Questions = [
   },
   {
     chapter: 5,
-    level: 3, // “尽量背” 对应级别 3
+    level: 1, // “尽量背” 对应级别 3
     title: "可行性研究的方面?",
     answer: [
       "经济可行性分析。",
