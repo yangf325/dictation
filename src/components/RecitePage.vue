@@ -58,7 +58,10 @@
         </div>
         <div class="card-body">
           <h3 class="question-title">{{ question.title }}</h3>
-          <div class="question-short" v-if="question.short">
+          <div
+            class="question-short"
+            v-if="question.short && [index] === 'read'"
+          >
             <span class="short-label">速记:</span> {{ question.short }}
           </div>
           <div class="answer-input-container">
@@ -70,7 +73,7 @@
                   v-for="(ans, ansIndex) in question.answer"
                   :key="ansIndex"
                 >
-                  {{ansIndex + 1}}、{{ ans }}
+                  {{ ansIndex + 1 }}、{{ ans }}
                 </li>
               </ul>
             </div>
@@ -90,8 +93,12 @@
     </div>
 
     <!-- 回到顶部按钮 -->
-    <button class="global-mode-toggle" v-if="showBackToTop" @click="toggleGlobalMode">
-      {{ globalMode === 'read' ? '默' : '读' }}
+    <button
+      class="global-mode-toggle"
+      v-if="showBackToTop"
+      @click="toggleGlobalMode"
+    >
+      {{ globalMode === "read" ? "默" : "读" }}
     </button>
     <button class="back-to-top" v-if="showBackToTop" @click="scrollToTop">
       ↑
@@ -165,7 +172,7 @@ export default {
       },
       cardModes: {}, // 存储每个卡片的模式
       userAnswers: {}, // 存储用户的答案
-      globalMode: 'read', // 新增全局模式状态
+      globalMode: "read", // 新增全局模式状态
     };
   },
   computed: {
@@ -185,12 +192,20 @@ export default {
   methods: {
     filterQuestions() {
       this.filteredQuestions = this.allQuestions.filter((question) => {
-        const chapterMatch = !this.selectedChapter || question.chapter === this.selectedChapter;
-        console.log('chapterMatch', !this.selectedChapter , question.chapter , this.selectedChapter)
-        const levelMatch = !this.selectedLevel || question.level === parseInt(this.selectedLevel);
+        const chapterMatch =
+          !this.selectedChapter || question.chapter === this.selectedChapter;
+        console.log(
+          "chapterMatch",
+          !this.selectedChapter,
+          question.chapter,
+          this.selectedChapter
+        );
+        const levelMatch =
+          !this.selectedLevel ||
+          question.level === parseInt(this.selectedLevel);
         return chapterMatch && levelMatch;
       });
-      console.log('filteredQuestions', this.filteredQuestions)
+      console.log("filteredQuestions", this.filteredQuestions);
       // 初始化所有卡片模式为全局模式
       this.filteredQuestions.forEach((_, index) => {
         this.$set(this.cardModes, index, this.globalMode);
@@ -220,7 +235,7 @@ export default {
     },
     // 新增全局模式切换方法
     toggleGlobalMode() {
-      this.globalMode = this.globalMode === 'read' ? 'write' : 'read';
+      this.globalMode = this.globalMode === "read" ? "write" : "read";
       // 应用全局模式到所有卡片
       this.filteredQuestions.forEach((_, index) => {
         this.$set(this.cardModes, index, this.globalMode);
@@ -486,7 +501,7 @@ export default {
   .mode-toggle-btn {
     order: 3;
   }
-  .answer-item{
+  .answer-item {
     font-size: 24px;
     font-weight: bold;
     list-style: none;

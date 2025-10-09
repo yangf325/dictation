@@ -1,4 +1,4 @@
-const chapter12Questions = [   
+const chapter12Questions = [
   {
     chapter: 12.12,
     level: 1, // “必须背” 对应级别 1
@@ -18,6 +18,20 @@ const chapter12Questions = [
     title: "服务战略规划的主要活动?",
     short: "无需口诀,直接背",
     answer: ["规划设计活动", "服务目录管理", "服务需求识别", "服务级别设计"],
+  },
+  {
+    chapter: 12.12,
+    level: 2, // “必须背” 对应级别 1
+    title: "服务目录管理的活动?",
+    short: "",
+    answer: [
+      "成立管理小组",
+      "列举服务清单。",
+      "确定服务类别与代码。",
+      "编制服务详述。",
+      "评审并发布服务目录。",
+      "完善服务目录。",
+    ],
   },
   {
     chapter: 12.12,
