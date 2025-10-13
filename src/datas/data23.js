@@ -22,7 +22,7 @@ const chapter23Questions = [
             "效益分析",
             "关键要素"
         ],
-        short: "需用营铕书"
+        short: "需用营效书"
     },
     {
         chapter: 23,
@@ -37,7 +37,7 @@ const chapter23Questions = [
             "预留充足的需求变革适应能力",
             "考虑消费者对消费入口工具的使用等"
         ],
-        short: "钱因细分贵适用"
+        short: "钱隐细分归适用"
     },
     {
         chapter: 23,
@@ -71,7 +71,8 @@ const chapter23Questions = [
             "促活锁客",
             "变现留客",
             "精准运营"
-        ]
+        ],
+        short: "获促变精"
     },
     {
         chapter: 23,
@@ -84,7 +85,7 @@ const chapter23Questions = [
             "实时响应和交互能力",
             "多终端支持能力"
         ],
-        short: "球叔按时钟"
+        short: "大数安时钟"
     },
     {
         chapter: 23,
@@ -96,7 +97,8 @@ const chapter23Questions = [
             "安全培训和意识教育",
             "系统备份和容灾",
             "监控和日志记录"
-        ]
+        ],
+        short: "加火训灾日"
     },
     {
         chapter: 23,
@@ -106,9 +108,10 @@ const chapter23Questions = [
             "模块化设计",
             "基于云计算的架构",
             "自动化运维和部署",
+            "统一数据管理和分析平台",
             "开放式接口和标准化协议",
-            "统一数据管理和分析平台"
-        ]
+        ],
+        short: "块云化分开"
     }
 ];
 

@@ -62,7 +62,7 @@ const chapter22Questions = [
             "系统集成",
             "新兴业态"
         ],
-        short: "心系同工资"
+        short: "要通共统新"
     },
     {
         chapter: 22,
@@ -73,7 +73,7 @@ const chapter22Questions = [
             "第二阶段的由全到通",
             "第三阶段的由通到智"
         ],
-        short: "缺到全,全到通,通到智"
+        short: "缺全通智"
     }
 ];
 

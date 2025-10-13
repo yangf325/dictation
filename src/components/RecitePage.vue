@@ -60,7 +60,7 @@
           <h3 class="question-title">{{ question.title }}</h3>
           <div
             class="question-short"
-            v-if="question.short && [index] === 'read'"
+            v-if="question.short && cardModes[index] === 'read'"
           >
             <span class="short-label">速记:</span> {{ question.short }}
           </div>

@@ -24,7 +24,7 @@ const chapter19Questions = [
       "技术与制度创新",
       "运维与运营体系",
     ],
-    short: "数智，建设，技术，运维",
+    short: "智建技运",
   },
   {
     chapter: 19,
@@ -33,8 +33,8 @@ const chapter19Questions = [
     answer: [
       "基础设施集约化",
       "运营管理精细化",
-      "园区服务平台化",
       "产业发展数字化",
+      "园区服务平台化",
     ],
     short: "设精产平",
   },
